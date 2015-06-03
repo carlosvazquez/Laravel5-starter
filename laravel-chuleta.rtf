@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red245\green245\blue245;}
+\margl1440\margr1440\vieww25080\viewh9960\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs56 \cf0 Laravel 5\
+Tipo columnas ejemplos:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803
+\cf0 string\
+unique\
+text\
+timestamp\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 nullable\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+\
+Migrations sin schema\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803
+\cf0 php artisan make:migration create_posts_table \'97-create=posts\
+Ahora para crear la tabla:\
+php artisan migrate\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+Migrations con schema con Laracast/Generators:\
+create \'93nombre de la tabla en plural\'94 table\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803
+\cf0 php artisan make:migration:schema create_users_table --schema="username:string, email:string:unique"\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+\
+\pard\pardeftab720\sl380
+
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs56 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+php artisan make:migration:schema create_pages_table --schema="title:text, body:text:nullable, meta-description:text:nullable, meta-og:text:nullable, meta-twitter:text:nullable\'94\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803
+\cf0 \
+Models deben ir en May\'fascula y Singular\
+php artisan make:model Post\
+Crear sin migraci\'f3n\
+php artisan make:model Post  \'97-no-migration \
+\
+Agregar columnas a una tabla existente:\
+add \'93nombre de la columna\'94 to \'93nombre de la tabla en plural\'94 table\
+php artisan make:migration:schema add_user_id_to_posts_table \'97-schema=\'93user_id:integer\'94\
+\
+Remover columnas a una tabla existente:\
+remove \'93nombre de la columna\'94 from \'93nombre de la tabla en plural\'94 table\
+php artisan make:migration:schema add_user_id_from_posts_table \'97-schema=\'93user_id:integer\'94\
+\
+Create Pivot table\
+\'93tabla en plural\'94 \'93tabla en plural\'94\
+php artisan make:migration:pivot tags posts\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+Alterar columna\
+alter \'93nombre plural tabla\'94 table remove \'93nombre columna\'94 add \'93nombre columna\'94 \'93nombre otra columna\'94\
+php artisan migrate:make alter_users_table_remove_name_add_first_name_last_name\
+\
+\
+\
+\
+Editor de texto WYSIWYG\
+http://summernote.org/#/example\
+\
+Shopping cart\
+https://github.com/Crinsane/LaravelShoppingcart}
