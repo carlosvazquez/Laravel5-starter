@@ -7,10 +7,15 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AdminTableSeeder' => $baseDir . '/database/seeds/AdminTableSeeder.php',
+    'AreaTableSeeder' => $baseDir . '/database/seeds/AreaTableSeeder.php',
+    'CreateAreasTable' => $baseDir . '/database/migrations/2015_06_04_001646_create_areas_table.php',
+    'CreateClientesTable' => $baseDir . '/database/migrations/2015_06_04_011218_create_clientes_table.php',
+    'CreateDivisionesTable' => $baseDir . '/database/migrations/2015_06_04_003121_create_divisiones_table.php',
     'CreatePagesTable' => $baseDir . '/database/migrations/2015_05_19_173644_create_pages_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
+    'DivisionTableSeeder' => $baseDir . '/database/seeds/DivisionTableSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',

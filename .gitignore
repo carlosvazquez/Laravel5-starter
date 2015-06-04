@@ -7,3 +7,7 @@
 .env
 
 laravel-chuleta.rtf
+database/migrations/*.php
+database/seeds/*.php
+
+vendor/

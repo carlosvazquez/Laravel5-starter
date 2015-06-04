@@ -11,23 +11,15 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'HomeController@index');
+Route::resource('clientes', 'ClientesController');
 
-Route::get('home', 'HomeController@index');
-
-Route::get('pages', 'PagesController@index');
-
-Route::get('about', 'PagesController@about');
-Route::get('author', 'PagesController@author');
-Route::get('significance', 'PagesController@significance');
-Route::get('reviews', 'PagesController@reviews');
-Route::get('faqs', 'PagesController@faqs');
-
-
-
-
-
-
+#Route::get('pages', 'PagesController@index');
+#Route::get('about', 'PagesController@about');
+#Route::get('author', 'PagesController@author');
+#Route::get('significance', 'PagesController@significance');
+#Route::get('reviews', 'PagesController@reviews');
+#Route::get('faqs', 'PagesController@faqs');
 
 
 
