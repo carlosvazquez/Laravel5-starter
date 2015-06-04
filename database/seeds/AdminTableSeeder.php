@@ -13,6 +13,14 @@ class AdminTableSeeder extends Seeder {
             'email' => 'admin@outlook.com',
             'password' => Hash::make('demo123')
         ));
+        DB::table('users')->insert(array(
+            'username' => 'gsalazarh',
+            'first_name' => 'Gustavo',
+            'last_name' => 'Salazar',
+            'type'      => 'admin',
+            'email' => 'gsalazarh@live.com.mx',
+            'password' => Hash::make('demo123')
+        ));
     }
 
 }
