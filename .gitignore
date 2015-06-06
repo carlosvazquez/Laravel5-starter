@@ -5,6 +5,11 @@
 .env.*.php
 .env.php
 .env
+.env-local
+.env-remote
+base.zip
+laravel-chuleta.txt
+
 
 laravel-chuleta.rtf
 database/migrations/*.php
