@@ -1,11 +1,12 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class AreasController extends Controller {
+class UsersController extends Controller {
+
 
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +15,7 @@ class AreasController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return 'hola';
 	}
 
 	/**
@@ -24,7 +25,7 @@ class AreasController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return 'hola create';
 	}
 
 	/**

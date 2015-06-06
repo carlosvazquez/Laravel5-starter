@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Eistel | {{ isset($title) ? $title : 'Sistema de gestión de clientes' }}</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
@@ -20,35 +20,8 @@
 </head>
 <!-- php artisan make:migration:schema create_clientes_table --schema="title:string"
 php artisan make:migration:schema create_clientes_table --schema="name:string,cancelacion_id:integer:foreign, reporte_id:integer:foreign, title:string, domicilio:text, telefono:integer, agendacion:date, migracion:date, download:float, upload:float, statusos:boolean, dto:boolean, termoptica:" -->
-<body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="/">Eistel</a>
-			</div>
-
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/clientes') }}">Clientes</a></li>
-				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						<!-- <li><a href="#{{ url('/auth/register') }}">Register</a></li> -->
-					@else
-						<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-					@endif
-				</ul>
-			</div>
-		</div>
-	</nav>
+<body class="{{ isset($body) ? $body : '' }}">
+	@include('layouts.partials.navbar')
 
 	@yield('content')
 

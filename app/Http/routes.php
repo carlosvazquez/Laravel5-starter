@@ -12,19 +12,24 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('clientes', 'ClientesController@index');
+
 Route::resource('clientes', 'ClientesController');
 
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin'], function()
+{
+    Route::resource('/', 'DashboardController');
+	Route::resource('users', 'UsersController');
+	Route::resource('clientes', 'ClientesController');
+
+});
 #Route::get('pages', 'PagesController@index');
 #Route::get('about', 'PagesController@about');
 #Route::get('author', 'PagesController@author');
 #Route::get('significance', 'PagesController@significance');
 #Route::get('reviews', 'PagesController@reviews');
 #Route::get('faqs', 'PagesController@faqs');
-
-
-
-
-
 
 
 Route::controllers([

@@ -152,6 +152,11 @@ return [
 		 */
 		'Barryvdh\Debugbar\ServiceProvider',
 
+		/*
+		 * Roles permissions
+		 */
+		'Bican\Roles\RolesServiceProvider',
+
 	],
 
 	/*
@@ -203,7 +208,7 @@ return [
       	'Html' 		=> 'Collective\Html\HtmlFacade',
 //        'Form'      => 'Illuminate\Html\FormFacade',
 //        'Html'      => 'Illuminate\Html\HtmlFacade',
-		'Debugbar' => 'Barryvdh\Debugbar\Facade',
+		'Debugbar' 	=> 'Barryvdh\Debugbar\Facade',
 	],
 
 ];

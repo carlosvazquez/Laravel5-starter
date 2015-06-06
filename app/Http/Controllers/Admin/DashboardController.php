@@ -1,34 +1,22 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class ClientesController extends Controller {
+class DashboardController extends Controller {
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
+
+    public function __construct()
+    {
+
+    }
+
+
 	public function index()
 	{
-
-		$title 	= 'Clientes';
-		$body 	= 'bla2';
-		$dato 	= 'bla3';
-
-		return view('clientes.index', compact('title','body','dato'));
+		return "dashboard";
 	}
 
 	/**

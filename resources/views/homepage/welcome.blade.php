@@ -19,7 +19,6 @@
 			<div class="row">
 				<div class="xs-col-12">
 					<a class="btn btn-default btn-lg btn-success" href="{{ url('/auth/login') }}">Login</a>
-					<a class="btn btn-default btn-lg btn-warning" href="{{ url('/auth/register') }}">Registarse</a>
 				</div>
 			</div>
 			@else

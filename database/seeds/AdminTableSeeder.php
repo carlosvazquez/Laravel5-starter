@@ -21,6 +21,8 @@ class AdminTableSeeder extends Seeder {
             'email' => 'gsalazarh@live.com.mx',
             'password' => Hash::make('demo123')
         ));
+
+
     }
 
 }
