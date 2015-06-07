@@ -10,7 +10,8 @@
 		"fzaninotto/faker": "^1.4",
 		"laravelcollective/html": "~5.0",
 		"bican/roles": "1.7.*",
-		"nesbot/carbon": "^1.19"
+		"nesbot/carbon": "^1.19",
+        "laracasts/flash": "~1.3"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

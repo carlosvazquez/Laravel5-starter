@@ -13,9 +13,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 @if (Auth::user()->type == 'admin')
-                <li><a href="{{ url('clientes') }}">Dashboard</a></li>
-                <li><a href="{{ url('admin/users/create') }}">Nuevo técnico</a></li>
-                <li><a href="{{ url('admin/clientes/create') }}">Nuevo cliente</a></li>
+                <li><a href="{{ url('admin') }}">Dashboard</a></li>
+                    <li><a href="{{ route('admin.users.index') }}">Listar usuarios</a></li>
+                <li><a href="{{ route('admin.users.create') }}">Nuevo usuario</a></li>
                 @endif
             </ul>
 

@@ -3,6 +3,8 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\User;
+
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller {
@@ -16,7 +18,10 @@ class DashboardController extends Controller {
 
 	public function index()
 	{
-		return "dashboard";
+        $users = User::paginate(15);
+        $title 	= 'Dlashboard';
+        $body 	= 'dashboard';
+        return view('admin.dashboard.index', compact('users','title','body'));
 	}
 
 	/**

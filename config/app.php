@@ -52,7 +52,7 @@ return [
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => 'es',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -157,6 +157,11 @@ return [
 		 */
 		'Bican\Roles\RolesServiceProvider',
 
+        /*
+         * Flash messages by laracast
+         */
+        'Laracasts\Flash\FlashServiceProvider',
+
 	],
 
 	/*
@@ -209,6 +214,8 @@ return [
 //        'Form'      => 'Illuminate\Html\FormFacade',
 //        'Html'      => 'Illuminate\Html\HtmlFacade',
 		'Debugbar' 	=> 'Barryvdh\Debugbar\Facade',
+        'Flash' => 'Laracasts\Flash\Flash',
+
 	],
 
 ];

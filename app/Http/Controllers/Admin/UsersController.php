@@ -3,7 +3,10 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Validator;
+use Laracasts\Flash\Flash;
+use Illuminate\Support\Facades\Request;
 
 class UsersController extends Controller {
 
@@ -15,7 +18,9 @@ class UsersController extends Controller {
 	 */
 	public function index()
 	{
-		return 'hola';
+        $users = User::paginate(15);
+
+        return view('admin.users.index', compact('users'));
 	}
 
 	/**
@@ -25,7 +30,7 @@ class UsersController extends Controller {
 	 */
 	public function create()
 	{
-		return 'hola create';
+		return view('admin.users.create');
 	}
 
 	/**
@@ -35,7 +40,36 @@ class UsersController extends Controller {
 	 */
 	public function store()
 	{
-		//
+        $data = Request::all();
+        $rules = array(
+            'username'      => 'required|alpha_num',
+            'first_name'    => 'required|alpha',
+            'last_name'     => 'required|alpha',
+            'type'          => 'required|alpha',
+            'email'         => 'required|unique:users,email',
+            'password'      => 'required|min:8',
+            'actived'       => 'required|boolean'
+        );
+
+        $v = Validator::make($data, $rules);
+
+        if ($v->fails()) {
+            flash()->error('Hay errores en el formulario. No se guardó el registro.');
+            return redirect()->back()
+                ->withErrors($v->errors())
+                ->withInputs(Request::except('password'));
+
+        }
+
+        $user = new User($data);
+        $user->save();
+
+        flash()->success('Técnico dado de alta con éxito.');
+       #return Redirect::clientes();
+        #$input = Input::all();
+        #User::create( $input );
+        return redirect()->back();
+
 	}
 
 	/**
@@ -57,7 +91,8 @@ class UsersController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+        $user = User::findOrfail($id);
+        return view('admin.users.edit', compact('user'));
 	}
 
 	/**
@@ -68,7 +103,11 @@ class UsersController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+        $user = User::findOrfail($id);
+        $user->fill(Request::all());
+        $user->save();
+        flash()->success('El usuario fue actualizado correctamente.');
+        return redirect('admin/users');
 	}
 
 	/**

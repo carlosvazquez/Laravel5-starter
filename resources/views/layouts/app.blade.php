@@ -23,8 +23,9 @@ php artisan make:migration:schema create_clientes_table --schema="name:string,ca
 <body class="{{ isset($body) ? $body : '' }}">
 	@include('layouts.partials.navbar')
 
-	@yield('content')
+    @include('layouts.partials.flashmessage')
 
+	@yield('content')
 	<!-- Scripts -->
 	<script src="{{ asset('/js/app.js') }}"></script>
 </body>

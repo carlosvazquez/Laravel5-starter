@@ -17,7 +17,7 @@ Route::get('clientes', 'ClientesController@index');
 Route::resource('clientes', 'ClientesController');
 
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin'], function()
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'is_admin'], 'namespace' => 'Admin'], function()
 {
     Route::resource('/', 'DashboardController');
 	Route::resource('users', 'UsersController');

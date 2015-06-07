@@ -6237,22 +6237,24 @@ body.homepage {
   width: 100%;
   height: 100%;
   color: #B0BEC5;
-  display: table;
   font-weight: 100;
   font-family: 'Lato';
 }
 body.homepage .container {
   text-align: center;
-  display: table-cell;
   vertical-align: middle;
 }
 body.homepage .container .content {
   text-align: center;
   display: inline-block;
+  padding-top: 14%;
 }
 body.homepage .container .content .title {
   font-size: 96px;
   margin-bottom: 40px;
+}
+body.loginpage .loginpage {
+  padding-top: 10%;
 }
 
 /*# sourceMappingURL=app.css.map */
