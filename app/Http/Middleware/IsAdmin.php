@@ -42,7 +42,7 @@ class IsAdmin {
             else
             {
                 flash()->error('No tiene permiso para acceder a la ruta.');
-                return redirect()->guest('clientes');
+                return redirect()->to('clientes');
             }
         }
 

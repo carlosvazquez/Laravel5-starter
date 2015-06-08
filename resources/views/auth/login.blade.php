@@ -24,11 +24,10 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Usuario</label>
 							<div class="col-md-6">
-                                <input type="username" class="form-control" name="username" value="{{ old('username') }}">
+                                <input type="username" class="form-control" name="username" value="{{ old('username') }}" >
 							</div>
 						</div>
-
-						<div class="form-group">
+						<div class="form-group ">
 							<label class="col-md-4 control-label">Contraseña</label>
 							<div class="col-md-6">
 								<input type="password" class="form-control" name="password">

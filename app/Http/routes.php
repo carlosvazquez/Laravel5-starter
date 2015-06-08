@@ -12,16 +12,16 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('clientes', 'ClientesController@index');
+Route::get('dashboard', 'DashboardController@index');
 
-Route::resource('clientes', 'ClientesController');
+Route::resource('installs', 'InstallsController');
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'is_admin'], 'namespace' => 'Admin'], function()
 {
     Route::resource('/', 'DashboardController');
 	Route::resource('users', 'UsersController');
-	Route::resource('clientes', 'ClientesController');
+	Route::resource('installs', 'InstallsController');
 
 });
 #Route::get('pages', 'PagesController@index');

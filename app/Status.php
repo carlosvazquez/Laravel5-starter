@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cliente extends Model {
-	protected $table = 'clientes';
+class Status extends Model {
+    protected $table = 'statuses';
 
 	//
 

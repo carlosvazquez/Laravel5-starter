@@ -30,7 +30,8 @@
         "Collective\\Html\\HtmlServiceProvider",
         "Barryvdh\\Debugbar\\ServiceProvider",
         "Bican\\Roles\\RolesServiceProvider",
-        "Laracasts\\Flash\\FlashServiceProvider"
+        "Laracasts\\Flash\\FlashServiceProvider",
+        "Jenssegers\\Date\\DateServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -51,7 +52,8 @@
         "App\\Providers\\RouteServiceProvider",
         "Barryvdh\\Debugbar\\ServiceProvider",
         "Bican\\Roles\\RolesServiceProvider",
-        "Laracasts\\Flash\\FlashServiceProvider"
+        "Laracasts\\Flash\\FlashServiceProvider",
+        "Jenssegers\\Date\\DateServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

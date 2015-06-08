@@ -52,7 +52,7 @@ return [
 	|
 	*/
 
-	'locale' => 'es',
+	'locale' => 'en',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -161,6 +161,10 @@ return [
          * Flash messages by laracast
          */
         'Laracasts\Flash\FlashServiceProvider',
+        /*
+         * Date customization with Carbon functions https://github.com/jenssegers/laravel-date
+         */
+        'Jenssegers\Date\DateServiceProvider',
 
 	],
 

@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use Jenssegers\Date\Date;
+
 class HomeController extends Controller {
 
 	/*
@@ -30,7 +32,10 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('homepage.index');
+        Date::setLocale('es');
+
+        $fecha = Date::now('America/Tijuana')->format('l j F Y H:i:s');;
+		return view('homepage.index', compact('fecha'));
 	}
 
 

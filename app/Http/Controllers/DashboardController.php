@@ -2,34 +2,39 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Auth;
+use App\Install;
 use Illuminate\Http\Request;
 
-class ClientesController extends Controller {
+class DashboardController extends Controller {
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
+    public function index()
+    {
 
-		$title 	= 'Clientes';
-		$body 	= 'bla2';
-		$dato 	= 'bla3';
+        $mio = Auth::user()->id;
 
-		return view('clientes.index', compact('title','body','dato'));
-	}
+
+        $installs = Install::where('user_id', $mio)
+            ->where('status_id', '1')
+            ->simplePaginate(2);
+
+
+
+        $title 	= 'Clientes';
+        $body 	= 'bla2';
+
+        return view('dashboard.index', compact('title','body', 'installs'));
+    }
 
 	/**
 	 * Show the form for creating a new resource.

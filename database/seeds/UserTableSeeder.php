@@ -7,14 +7,16 @@ class UserTableSeeder extends Seeder {
     public function run() {
 
         DB::table('users')->insert(array(
-            'username' => 'tecnico239',
+            'empleado'  =>  '3',
+            'username' => 'tecnico',
             'first_name' => 'Juan',
             'last_name' => 'Sanchez',
-            'type'      => 'user',
             'email' => 'soporte@eistel.mx',
+            'password' => Hash::make('demo123'),
+            'type'      => 'user',
             'actived'   => '1',
-            'password' => Hash::make('demo123')
         ));
+
 
         #$faker = Faker\Factory::create();
 

@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Divisione extends Model {
-	protected $table = 'divisiones';
+class Division extends Model {
+	protected $table = 'divisions';
 
 	//
 

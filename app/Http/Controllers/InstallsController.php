@@ -1,27 +1,37 @@
-<?php namespace App\Http\Controllers\Admin;
+<?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Install;
 use App\User;
-
+use Auth;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller {
+class InstallsController extends Controller {
 
-
-    public function __construct()
-    {
-
-    }
-
-
-	public function index($id= null)
+	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
 	{
+		$this->middleware('auth');
+	}
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+	public function index()
+	{
+
         $installs = Install::paginate(15);
-        $title 	= 'Dlashboard';
-        $body 	= 'dashboard';
-        return view('admin.dashboard.index', compact('installs','title','body'));
+
+		$title 	= 'Clientes';
+		$body 	= 'bla2';
+
+		return view('installs.index', compact('installs','title','body'));
 	}
 
 	/**
@@ -52,8 +62,21 @@ class DashboardController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
-	}
+        $mio = Auth::user()->id;
+
+
+        $installs = Install::where('id', $id)
+            ->where('user_id', $id)
+            ->where('status_id', '1')
+            ->simplePaginate(2);
+
+
+
+        $title 	= 'Clientes';
+        $body 	= 'bla2';
+        return view('dashboard.index', compact('title','body', 'installs'));
+
+    }
 
 	/**
 	 * Show the form for editing the specified resource.

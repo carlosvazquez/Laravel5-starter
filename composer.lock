@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f2652e36de95e8d3e0a46ea525a6c39e",
+    "hash": "1c9d87517f5fc58ab9bf383a5279ce5e",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -59,49 +59,6 @@
                 "webprofiler"
             ],
             "time": "2015-03-07 15:15:23"
-        },
-        {
-            "name": "bican/roles",
-            "version": "1.7.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/romanbican/roles.git",
-                "reference": "5922d8c136f829d7799aca7869a8139011059961"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/romanbican/roles/zipball/5922d8c136f829d7799aca7869a8139011059961",
-                "reference": "5922d8c136f829d7799aca7869a8139011059961",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.0",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Bican\\Roles": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Bičan",
-                    "email": "romanbican@seznam.cz"
-                }
-            ],
-            "description": "Powerful package for handling roles and permissions in Laravel 5.",
-            "keywords": [
-                "laravel",
-                "laravel5",
-                "permissions",
-                "roles"
-            ],
-            "time": "2015-05-18 11:41:07"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -498,6 +455,62 @@
                 }
             ],
             "time": "2014-07-14 20:59:35"
+        },
+        {
+            "name": "jenssegers/date",
+            "version": "v3.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenssegers/laravel-date.git",
+                "reference": "4d23b2000e156dd94be7c404cf3cdee5539e91b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/4d23b2000e156dd94be7c404cf3cdee5539e91b3",
+                "reference": "4d23b2000e156dd94be7c404cf3cdee5539e91b3",
+                "shasum": ""
+            },
+            "require": {
+                "nesbot/carbon": "~1.0",
+                "php": ">=5.3.3",
+                "symfony/translation": "~2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jenssegers\\Date\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Segers",
+                    "homepage": "http://jenssegers.be"
+                }
+            ],
+            "description": "A date library to help you work with dates in different languages",
+            "keywords": [
+                "carbon",
+                "date",
+                "datetime",
+                "i18n",
+                "laravel",
+                "time",
+                "translation"
+            ],
+            "time": "2015-06-04 09:21:04"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -2044,6 +2057,49 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "bican/roles",
+            "version": "1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/romanbican/roles.git",
+                "reference": "5922d8c136f829d7799aca7869a8139011059961"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/romanbican/roles/zipball/5922d8c136f829d7799aca7869a8139011059961",
+                "reference": "5922d8c136f829d7799aca7869a8139011059961",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Bican\\Roles": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Bičan",
+                    "email": "romanbican@seznam.cz"
+                }
+            ],
+            "description": "Powerful package for handling roles and permissions in Laravel 5.",
+            "keywords": [
+                "laravel",
+                "laravel5",
+                "permissions",
+                "roles"
+            ],
+            "time": "2015-05-18 11:41:07"
+        },
         {
             "name": "doctrine/instantiator",
             "version": "1.0.4",

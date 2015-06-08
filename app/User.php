@@ -42,6 +42,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+
     public function setPasswordAttribute($value){
 
         if (!empty($value))
@@ -49,6 +50,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             $this->attributes['password'] = bcrypt($value);
         }
         
+    }
+
+    public function installs(){
+        return $this->hasMany('App\Install');
     }
 
 }
