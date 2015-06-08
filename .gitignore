@@ -2,7 +2,7 @@
 
 ### Laravel ###
 /bootstrap/compiled.php
-.idea/*
+.idea/
 .env.*.php
 .env.php
 .env
