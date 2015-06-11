@@ -2,30 +2,19 @@
 
 @section('content')
 <div class="container">
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="panel panel-default">
-				<div class="panel-heading">Acciones</div>
-				<div class="panel-body text-center">
-					<a class="btn btn-success btn-lg" href="{{ url('/installs') }}">Nueva instalación</a>
-                    <a class="btn btn-success btn-lg" href="{{ url('/installs') }}">Listar instalaciones</a><br>
-
-					@role('admin')
-					 eres admin
-					@endrole
-					@role('supervisor')
-					 eres supervisor
-					@endrole
-					@role('tecnico')
-					 eres tecnico
-					@endrole
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Acciones</div>
+                <div class="panel-body text-center">
+                    <a class="btn btn-success btn-lg" href="{{ url('/dashboard') }}">Inicio</a>
 
 
-				</div>
-			</div>
-		</div>
-	</div>
-
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
 	<div class="row">
 		<div class="col-xs-12">
 			<h2>Lista de clientes</h2>

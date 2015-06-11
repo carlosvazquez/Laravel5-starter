@@ -7,29 +7,24 @@ class UserTableSeeder extends Seeder {
     public function run() {
 
         DB::table('users')->insert(array(
-            'empleado'  =>  '3',
+            'username' => 'supervisor',
+            'first_name' => 'Pedro',
+            'last_name' => 'Garcia',
+            'email' => 'supervision@eistel.mx',
+            'password' => Hash::make('demo123'),
+            'type'      => 'supervisor',
+            'actived'   => '1',
+        ));
+        DB::table('users')->insert(array(
             'username' => 'tecnico',
             'first_name' => 'Juan',
             'last_name' => 'Sanchez',
-            'email' => 'soporte@eistel.mx',
+            'email' => 'tecnico@eistel.mx',
             'password' => Hash::make('demo123'),
-            'type'      => 'user',
+            'type'      => 'tecnico',
             'actived'   => '1',
         ));
 
-
-        #$faker = Faker\Factory::create();
-
-        #for ($i=0; $i < 10; $i++) {
-        #    DB::table('users')->insert(array(
-        #    'username'      => $faker->userName,
-        #    'first_name'    => $faker->firstName,
-        #    'last_name'     => $faker->lastName,
-        #    'type'          => 'user',
-        #    'email'         => $faker->email,
-        #    'password'      => Hash::make('holamundo')
-        #));
-        #}
     }
 
 }

@@ -12,18 +12,25 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('dashboard', 'DashboardController@index');
-
-Route::resource('installs', 'InstallsController');
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'is_admin'], 'namespace' => 'Admin'], function()
 {
-    Route::resource('/', 'DashboardController');
+    Route::resource('/', 'AdminController');
 	Route::resource('users', 'UsersController');
 	Route::resource('installs', 'InstallsController');
 
 });
+
+Route::group(['prefix' => 'panel', 'middleware' => 'auth', 'namespace' => 'Panel'], function()
+{
+    Route::resource('/', 'PanelController');
+    Route::resource('installs', 'InstallsController');
+
+});
+
+
+
 #Route::get('pages', 'PagesController@index');
 #Route::get('about', 'PagesController@about');
 #Route::get('author', 'PagesController@author');
@@ -31,6 +38,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'is_admin'], 'namesp
 #Route::get('reviews', 'PagesController@reviews');
 #Route::get('faqs', 'PagesController@faqs');
 
+
+Route::get('test', function(){
+    return response()->json(['name' => 'Abigail', 'state' => 'CA']);
+});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

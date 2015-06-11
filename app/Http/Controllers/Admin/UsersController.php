@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
+use Bican\Roles\Models\Role;
 use Illuminate\Support\Facades\Validator;
 use Laracasts\Flash\Flash;
 use Illuminate\Support\Facades\Request;
@@ -16,6 +17,8 @@ class UsersController extends Controller {
 	 *
 	 * @return Response
 	 */
+    protected $role;
+
 	public function index()
 	{
         $users = User::paginate(15);
@@ -30,7 +33,9 @@ class UsersController extends Controller {
 	 */
 	public function create()
 	{
-		return view('admin.users.create');
+        #$roles = Role::lists('name','id');
+
+		return view('admin.users.create', compact('roles'));
 	}
 
 	/**
@@ -40,14 +45,26 @@ class UsersController extends Controller {
 	 */
 	public function store()
 	{
+
         $data = Request::all();
+        $role = $data['type'];
+
+        if($role === "admin") {
+            $role = 1;
+        } elseif($role === "contralor") {
+            $role = 2;
+        }elseif($role === "supervisor") {
+            $role = 3;
+        } elseif($role === "tecnico") {
+            $role = 4;
+        }
+
         $rules = array(
-            'username'      => 'required|alpha_num',
-            'first_name'    => 'required|alpha',
-            'last_name'     => 'required|alpha',
-            'type'          => 'required|alpha',
+            'username'      => 'required|alpha_num|min:4',
+            'first_name'    => 'required|alpha|min:4',
+            'last_name'     => 'required|alpha|min:4',
             'email'         => 'required|unique:users,email',
-            'password'      => 'required|min:8',
+            'password'      => 'required|min:4',
             'actived'       => 'required|boolean'
         );
 
@@ -63,11 +80,11 @@ class UsersController extends Controller {
 
         $user = new User($data);
         $user->save();
+        $role = Role::find($role);
+        User::find($user->id)->attachRole($role);
 
         flash()->success('Técnico dado de alta con éxito.');
-       #return Redirect::clientes();
-        #$input = Input::all();
-        #User::create( $input );
+
         return redirect()->back();
 
 	}

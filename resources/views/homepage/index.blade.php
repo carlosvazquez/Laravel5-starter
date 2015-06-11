@@ -14,12 +14,22 @@
         @else
             <div class="row">
                 <div class="xs-col-12">
-                    <a class="btn btn-default btn-lg btn-success" href="{{ url('/dashboard') }}">Sistema</a>
+                    @role('supervisor|tecnico')
+                    <p>eres supervisor o tecnico</p>
+                    <a class="btn btn-default btn-lg btn-success" href="{{ url('/panel') }}">Sistema</a>
                     <a class="btn btn-default btn-lg btn-danger" href="{{ url('/auth/logout') }}">Logout</a>
+                    @endrole
+                    @role('admin|contralor')
+                    <p>Eres admin o contralor</p>
+                    <a class="btn btn-default btn-lg btn-success" href="{{ url('/admin') }}">Sistema</a>
+                    <a class="btn btn-default btn-lg btn-danger" href="{{ url('/auth/logout') }}">Logout</a>
+                    @endrole
                 </div>
             </div>
         @endif
         <div class="row">
-            <div class="xs-col-12" style="text-transform: capitalize; margin-top: 40px;">{{ $fecha }}</div>
+            <div class="xs-col-12" style="text-transform: capitalize; margin-top: 40px;">
+
+                {{ $fecha }}</div>
         </div>
 @endsection

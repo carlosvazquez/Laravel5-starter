@@ -4,10 +4,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
-
+use App\Install;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller {
+class AdminController extends Controller {
 
 
     public function __construct()
@@ -19,7 +19,7 @@ class DashboardController extends Controller {
 	public function index($id= null)
 	{
         $installs = Install::paginate(15);
-        $title 	= 'Dlashboard';
+        $title 	= 'Admin Dashboard';
         $body 	= 'dashboard';
         return view('admin.dashboard.index', compact('installs','title','body'));
 	}

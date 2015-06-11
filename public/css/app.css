@@ -6256,5 +6256,13 @@ body.homepage .container .content .title {
 body.loginpage .loginpage {
   padding-top: 10%;
 }
+select#hora.form-control,
+select#minuto.form-control {
+  font-size: 28px;
+  height: auto;
+}
+.panel a.btn-lg {
+  margin-bottom: 20px;
+}
 
 /*# sourceMappingURL=app.css.map */

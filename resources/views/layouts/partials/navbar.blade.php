@@ -24,6 +24,7 @@
                     <li><a href="{{ url('/auth/login') }}">Login</a></li>
                     <!-- <li><a href="#{{ url('/auth/register') }}">Register</a></li> -->
                 @else
+                    <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
                     <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
                 @endif
             </ul>

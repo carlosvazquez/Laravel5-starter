@@ -98,7 +98,6 @@ trait AuthenticatesAndRegistersUsers {
 		return 'These credentials do not match our records.';
 	}
 
-
 	/**
 	 * Log the user out of the application.
 	 *
@@ -123,7 +122,7 @@ trait AuthenticatesAndRegistersUsers {
 			return $this->redirectPath;
 		}
 
-		return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
+		return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
 	}
 
 	/**

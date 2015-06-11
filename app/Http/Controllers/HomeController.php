@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use Jenssegers\Date\Date;
+use Jenssegers\Date\Date as Date;
 
 class HomeController extends Controller {
 
@@ -34,7 +34,8 @@ class HomeController extends Controller {
 	{
         Date::setLocale('es');
 
-        $fecha = Date::now('America/Tijuana')->format('l j F Y H:i:s');;
+        $fecha = Date::now('America/Tijuana')->format('l j F Y H:i:s');
+
 		return view('homepage.index', compact('fecha'));
 	}
 

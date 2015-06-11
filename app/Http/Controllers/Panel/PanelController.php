@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Panel;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -6,7 +6,7 @@ use Auth;
 use App\Install;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller {
+class PanelController extends Controller {
 
     public function __construct()
     {
@@ -26,14 +26,14 @@ class DashboardController extends Controller {
 
         $installs = Install::where('user_id', $mio)
             ->where('status_id', '1')
-            ->simplePaginate(2);
-
+            ->orderBy('created_at', 'DESC')
+            ->paginate(15);
 
 
         $title 	= 'Clientes';
         $body 	= 'bla2';
 
-        return view('dashboard.index', compact('title','body', 'installs'));
+        return view('panel.index', compact('title','body', 'installs'));
     }
 
 	/**

@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class ClientesController extends Controller {
+class InstallsController extends Controller {
 
 
 	public function __construct()
@@ -25,7 +25,7 @@ class ClientesController extends Controller {
 		$body 	= 'bla2';
 		$dato 	= 'bla3';
 
-		return view('clientes.index', compact('title','body','dato'));
+		return view('admin.dashboard.index', compact('title','body','dato'));
 	}
 
 	/**

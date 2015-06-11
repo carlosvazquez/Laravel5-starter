@@ -11,7 +11,8 @@
 		"laravelcollective/html": "~5.0",
 		"nesbot/carbon": "^1.19",
         "laracasts/flash": "~1.3",
-		"jenssegers/date": "^3.0"
+		"jenssegers/date": "^3.0",
+        "bican/roles": "1.7.*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

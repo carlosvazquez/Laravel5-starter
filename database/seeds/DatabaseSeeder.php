@@ -13,16 +13,15 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		Model::unguard();
+        $this->call('AreaTableSeeder');
+        $this->call('DivisionTableSeeder');
+        $this->call('StatusTableSeeder');
 		$this->call('AdminTableSeeder');
 		$this->call('UserTableSeeder');
+        $this->call('RoleTableSeeder');
+        $this->call('UserRoleTableSeeder');
         $this->call('InstallTableSeeder');
-		$this->call('AreaTableSeeder');
-		$this->call('DivisionTableSeeder');
-		$this->call('RoleTableSeeder');
-		$this->call('UserRoleTableSeeder');
-        $this->call('StatusTableSeeder');
-
-		#$this->call('PageTableSeeder');
+		$this->call('PageTableSeeder');
 	}
 
 }

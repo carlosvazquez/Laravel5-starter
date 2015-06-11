@@ -35,6 +35,7 @@ class IsAdmin {
 	{
         if ($this->auth->user()->type != 'admin')
         {
+
             if ($request->ajax())
             {
                 return response('Unauthorized.', 401);
@@ -42,7 +43,7 @@ class IsAdmin {
             else
             {
                 flash()->error('No tiene permiso para acceder a la ruta.');
-                return redirect()->to('clientes');
+                return redirect()->to('panel');
             }
         }
 

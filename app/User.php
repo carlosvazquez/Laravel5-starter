@@ -9,6 +9,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Bican\Roles\Contracts\HasRoleAndPermissionContract;
 use Bican\Roles\Traits\HasRoleAndPermission;
 
+
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract, HasRoleAndPermissionContract {
 
     use Authenticatable, CanResetPassword, HasRoleAndPermission;
@@ -55,5 +56,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function installs(){
         return $this->hasMany('App\Install');
     }
+
+
 
 }

@@ -6,12 +6,18 @@
             <div class="col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">Panel</div>
-                    <div class="panel-body text-center">
+                    <div class="panel-body text-center">aa
                         @role('admin')
                         Eres administrador
                         @endrole
-                        @role('manager')
-                        Eres gerente
+                        @role('contralor')
+                        Eres contralor
+                        @endrole
+                        @role('supervisor')
+                        Eres supervisor
+                        @endrole
+                        @role('tecnico')
+                        Eres técnico
                         @endrole
                     </div>
                 </div>

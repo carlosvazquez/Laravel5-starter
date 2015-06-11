@@ -5,6 +5,24 @@ use Illuminate\Database\Eloquent\Model;
 class Install extends Model {
 	protected $table = 'installs';
 
+    protected $fillable = [
+        'os',
+        'user_id',
+        'area_id',
+        'division_id',
+        'name',
+        'telefono',
+        'domicilio',
+        'status_id',
+        'programado',
+        'reprogramado',
+        'userupdate',
+        'actived'
+    ];
+
+
+
+
     public function user() {
         return $this->belongsTo('App\User');
     }

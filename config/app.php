@@ -52,7 +52,7 @@ return [
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => 'es',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -135,7 +135,6 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-//      'Illuminate\Html\HtmlServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -152,10 +151,10 @@ return [
 		 */
 		'Barryvdh\Debugbar\ServiceProvider',
 
-		/*
-		 * Roles permissions
-		 */
-		'Bican\Roles\RolesServiceProvider',
+        /*
+         * Roles permissions
+         */
+        'Bican\Roles\RolesServiceProvider',
 
         /*
          * Flash messages by laracast
@@ -215,10 +214,10 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Form' 		=> 'Collective\Html\FormFacade',
       	'Html' 		=> 'Collective\Html\HtmlFacade',
-//        'Form'      => 'Illuminate\Html\FormFacade',
-//        'Html'      => 'Illuminate\Html\HtmlFacade',
+//        'Form'    => 'Illuminate\Html\FormFacade',
+//        'Html'    => 'Illuminate\Html\HtmlFacade',
 		'Debugbar' 	=> 'Barryvdh\Debugbar\Facade',
-        'Flash' => 'Laracasts\Flash\Flash',
+        'Flash'     => 'Laracasts\Flash\Flash',
 
 	],
 

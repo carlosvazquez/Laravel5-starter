@@ -12,7 +12,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('type', 'Tipo de usuario') !!}
-    {!! Form::select('type', array('manager' => 'Gerencia', 'user' => 'Técnico'), 'user', ['class'=>'form-control']) !!}
+    {!! Form::select('type', array('admin' => 'Administrador', 'contralor' => 'Contralor', 'supervisor' => 'Supervisor', 'tecnico' => 'Técnico'), 'user', ['class'=>'form-control']) !!}
 </div>
 <div class="form-group">
     {!! Form::label('email', 'Correo electrónico') !!}
@@ -24,5 +24,5 @@
 </div>
 <div class="form-group">
     {!! Form::label('actived', 'Estado') !!}
-    {!! Form::select('actived', array('1' => 'Técnico activado', '0' => 'Técnico desactivado'), '1', ['class'=>'form-control']) !!}
+    {!! Form::select('actived', array('1' => 'Activado', '0' => 'Desactivado'), '1', ['class'=>'form-control']) !!}
 </div>
