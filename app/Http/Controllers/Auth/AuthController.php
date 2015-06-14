@@ -43,7 +43,7 @@ class AuthController extends Controller {
 
         //log in the user
         if ($this->auth->attempt($credentials, $remember)) {
-            return redirect()->intended('panel');
+            return redirect()->intended('ospanel');
         }
 
         //show error if invalid data entered

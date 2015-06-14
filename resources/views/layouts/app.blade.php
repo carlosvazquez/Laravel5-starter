@@ -7,6 +7,7 @@
 	<title>Eistel | {{ isset($title) ? $title : 'Sistema de gestión de clientes' }}</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -21,9 +22,9 @@
 <!-- php artisan make:migration:schema create_clientes_table --schema="title:string"
 php artisan make:migration:schema create_clientes_table --schema="name:string,cancelacion_id:integer:foreign, reporte_id:integer:foreign, title:string, domicilio:text, telefono:integer, agendacion:date, migracion:date, download:float, upload:float, statusos:boolean, dto:boolean, termoptica:" -->
 <body class="{{ isset($body) ? $body : '' }}">
-	@include('layouts.partials.navbar')
+	@include('ospanel.partials.navbar')
 
-    @include('layouts.partials.flashmessage')
+    @include('ospanel.partials.flashmessage')
 
 	@yield('content')
 	<!-- Scripts -->

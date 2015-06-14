@@ -6261,8 +6261,59 @@ select#minuto.form-control {
   font-size: 28px;
   height: auto;
 }
-.panel a.btn-lg {
-  margin-bottom: 20px;
+.adminstatics p {
+  line-height: 4em;
+}
+.adminstatics img.logotipo {
+  max-width: 120px;
+  height: auto;
+}
+.ospanel img.logotipo {
+  max-width: 155px;
+  height: auto;
+  margin-top: .5em;
+  margin-left: 1em;
+}
+.statusA {
+  color: #777777;
+}
+.statusC {
+  color: #d9534f;
+}
+.statusE {
+  color: #5cb85c;
+}
+.statusF {
+  color: #5bc0de;
+}
+.statusR {
+  color: #f0ad4e;
+}
+.statusT {
+  color: #91cf91;
+}
+.statusX {
+  color: #000000;
+}
+form hr {
+  border: 1px solid #eeeeee;
+}
+body.reporte-instalacion .icon {
+  font-size: 47px;
+  color: #5CB85C;
+}
+body.reporte-instalacion .iconbig {
+  font-size: 77px;
+  color: #5CB85C;
+}
+body.reporte-instalacion .table > tbody > tr > .emptyrow {
+  border-top: none;
+}
+body.reporte-instalacion .table > thead > tr > .emptyrow {
+  border-bottom: none;
+}
+body.reporte-instalacion .table > tbody > tr > .highrow {
+  border-top: 3px solid;
 }
 
 /*# sourceMappingURL=app.css.map */

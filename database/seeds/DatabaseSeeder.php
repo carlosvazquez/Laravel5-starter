@@ -17,11 +17,13 @@ class DatabaseSeeder extends Seeder {
         $this->call('DivisionTableSeeder');
         $this->call('StatusTableSeeder');
 		$this->call('AdminTableSeeder');
-		$this->call('UserTableSeeder');
+		#$this->call('UserTableSeeder');
         $this->call('RoleTableSeeder');
-        $this->call('UserRoleTableSeeder');
-        $this->call('InstallTableSeeder');
-		$this->call('PageTableSeeder');
+        #$this->call('UserRoleTableSeeder');
+        #$this->call('InstallTableSeeder');
+		#$this->call('PageTableSeeder');
+        $this->call('PermissionsTableSeeder');
+        $this->call('PermissionRoleTableSeeder');
 	}
 
 }

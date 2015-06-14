@@ -14,21 +14,19 @@
 Route::get('/', 'HomeController@index');
 
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'is_admin'], 'namespace' => 'Admin'], function()
+Route::group(['prefix' => 'ospanel', 'middleware' => 'auth', 'namespace' => 'OsPanel'], function()
 {
-    Route::resource('/', 'AdminController');
-	Route::resource('users', 'UsersController');
+    Route::resource('/', 'OsPanelController');
 	Route::resource('installs', 'InstallsController');
+    Route::resource('reports', 'ReportsController');
+    Route::resource('cancels', 'CancelsController');
 
 });
 
-Route::group(['prefix' => 'panel', 'middleware' => 'auth', 'namespace' => 'Panel'], function()
+Route::group(['prefix' => 'ospanel', 'middleware' => ['auth', 'admin'], 'namespace' => 'OsPanel'], function()
 {
-    Route::resource('/', 'PanelController');
-    Route::resource('installs', 'InstallsController');
-
+    Route::resource('users', 'UsersController');
 });
-
 
 
 #Route::get('pages', 'PagesController@index');
@@ -38,10 +36,6 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth', 'namespace' => 'Panel
 #Route::get('reviews', 'PagesController@reviews');
 #Route::get('faqs', 'PagesController@faqs');
 
-
-Route::get('test', function(){
-    return response()->json(['name' => 'Abigail', 'state' => 'CA']);
-});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

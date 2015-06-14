@@ -102,6 +102,9 @@ return [
 	|
 	*/
 
-	'attributes' => [],
+	'attributes' => [
+        'os' => 'orden de servicio',
+        'name' => 'nombre'
+    ],
 
 ];

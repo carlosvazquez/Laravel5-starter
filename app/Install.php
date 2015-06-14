@@ -15,11 +15,13 @@ class Install extends Model {
         'domicilio',
         'status_id',
         'programado',
+        'report_id',
+        'cancel_id',
         'reprogramado',
         'userupdate',
-        'actived'
+        'actived',
+        'updated_at'
     ];
-
 
 
 
@@ -38,4 +40,11 @@ class Install extends Model {
     public function responsable() {
         return $this->belongsTo('App\User', 'userupdate', 'id');
     }
+    public function reporte() {
+        return $this->hasOne('App\Report');
+    }
+    public function cancelacion() {
+        return $this->hasOne('App\Cancel');
+    }
 }
+
