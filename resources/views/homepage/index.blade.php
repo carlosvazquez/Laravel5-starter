@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="xs-col-12">
                     @if(Auth::check())
-                        <a class="btn btn-default btn-lg btn-success" href="{{ url('/ospanel') }}">Sistema</a>
+                        <a class="btn btn-default btn-lg btn-success" href="{{ url('/') }}">Sistema</a>
                         <a class="btn btn-default btn-lg btn-danger" href="{{ url('/auth/logout') }}">Salir</a>
                     @endif
                 </div>

@@ -28,11 +28,13 @@ class Report extends Model {
         'contratista',
         'noempleado',
         'vsw_ont',
-        'velupload'
+        'velupload',
+        'reportstatus'
     ];
     public function install()
     {
         return $this->belongsTo('App\Install');
 
     }
+
 }

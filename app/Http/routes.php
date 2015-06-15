@@ -11,19 +11,19 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+#Route::get('/', 'HomeController@index');
 
-
-Route::group(['prefix' => 'ospanel', 'middleware' => 'auth', 'namespace' => 'OsPanel'], function()
+Route::group(['middleware' => ['auth']], function()
 {
     Route::resource('/', 'OsPanelController');
 	Route::resource('installs', 'InstallsController');
+
     Route::resource('reports', 'ReportsController');
     Route::resource('cancels', 'CancelsController');
 
 });
 
-Route::group(['prefix' => 'ospanel', 'middleware' => ['auth', 'admin'], 'namespace' => 'OsPanel'], function()
+Route::group(['middleware' => ['auth', 'admin']], function()
 {
     Route::resource('users', 'UsersController');
 });

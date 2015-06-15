@@ -4,8 +4,11 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="loginpage col-md-8 col-md-offset-2">
+            <div class="content text-center" style="margin-bottom: 40px;">
+                <img style="width: 240px; height: auto;" src="/images/logo.svg" alt=""/>
+            </div>
 			<div class="panel panel-default">
-				<div class="panel-heading">Acceso</div>
+				<div class="panel-heading text-center">Acceso</div>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
@@ -46,7 +49,7 @@
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Entrar</button>
+								<button type="submit" class="btn btn-primary btn-lg">Entrar</button>
 
 								<a class="btn btn-link" href="{{ url('/password/email') }}">¿Olvidó su contraseña?</a>
 							</div>

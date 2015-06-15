@@ -6274,6 +6274,9 @@ select#minuto.form-control {
   margin-top: .5em;
   margin-left: 1em;
 }
+.well.finalizar {
+  background-color: #5bc0de;
+}
 .statusA {
   color: #777777;
 }

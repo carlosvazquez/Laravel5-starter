@@ -22,9 +22,9 @@
 <!-- php artisan make:migration:schema create_clientes_table --schema="title:string"
 php artisan make:migration:schema create_clientes_table --schema="name:string,cancelacion_id:integer:foreign, reporte_id:integer:foreign, title:string, domicilio:text, telefono:integer, agendacion:date, migracion:date, download:float, upload:float, statusos:boolean, dto:boolean, termoptica:" -->
 <body class="{{ isset($body) ? $body : '' }}">
-	@include('ospanel.partials.navbar')
+	@include('partials.navbar')
 
-    @include('ospanel.partials.flashmessage')
+    @include('partials.flashmessage')
 
 	@yield('content')
 	<!-- Scripts -->
