@@ -1,7 +1,7 @@
 {!! Form::hidden('status_id', '1', ['class'=>'form-control']) !!}
 {!! Form::hidden('user_id', $user, ['class'=>'form-control']) !!}
 {!! Form::hidden('division_id', '1', ['class'=>'form-control']) !!}
-{!! Form::hidden('status_id', '1', ['class'=>'form-control']) !!}
+{!! Form::hidden('status_id', '3', ['class'=>'form-control']) !!}
 {!! Form::hidden('programado', null, ['class'=>'form-control']) !!}
 {!! Form::hidden('userupdate', $user, ['class'=>'form-control']) !!}
 
@@ -28,6 +28,7 @@
 
 <div class="well">
     <div class="row">
+        <h4 class="text-center">Hora programada de visita</h4>
         <div class="col-xs-6">
             <div class="form-group">
                 {!! Form::label('hora', 'Hora') !!}

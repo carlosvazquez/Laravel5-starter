@@ -51,7 +51,7 @@ class OsPanelController extends Controller {
                 ->with('responsable')
                 ->with('reporte')
                 ->with('cancelacion')
-                ->where('status_id', '=', '2' )
+                ->where('status_id', '=', '5' )
                 ->where('created_at', '>=', $this->hoy )
                 ->orderBy('created_at', 'DESC')->get();
 
@@ -73,7 +73,7 @@ class OsPanelController extends Controller {
                 ->with('responsable')
                 ->with('reporte')
                 ->with('cancelacion')
-                ->where('status_id', '=', '3' )
+                ->where('status_id', '=', '1' )
                 ->where('created_at', '>=', $this->hoy )
                 ->orderBy('created_at', 'DESC')->get();
             $reprogramadas = Install::with('user')
@@ -83,7 +83,7 @@ class OsPanelController extends Controller {
                 ->with('responsable')
                 ->with('reporte')
                 ->with('cancelacion')
-                ->where('status_id', '=', '5' )
+                ->where('status_id', '=', '4' )
                 ->orderBy('created_at', 'DESC')->get();
 
             $confirmadas = Install::with('user')
@@ -93,7 +93,7 @@ class OsPanelController extends Controller {
                 ->with('responsable')
                 ->with('reporte')
                 ->with('cancelacion')
-                ->where('status_id', '=', '4' )
+                ->where('status_id', '=', '2' )
                 ->where('created_at', '>=', $this->hoy )
                 ->orderBy('created_at', 'DESC')->get();
 

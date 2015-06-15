@@ -20,5 +20,9 @@ class Cancel extends Model {
         'falla_ont',
         'comentarios'
     ];
+    public function install()
+    {
+        return $this->belongsTo('App\Install');
 
+    }
 }

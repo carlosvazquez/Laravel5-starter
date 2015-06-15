@@ -77,9 +77,9 @@ class UsersController extends Controller {
         }
 
         $rules = array(
-            'username'      => 'required|alpha_num|min:4',
-            'first_name'    => 'required|alpha|min:4',
-            'last_name'     => 'required|alpha|min:4',
+            'username'      => 'required|min:4',
+            'first_name'    => 'required|min:4',
+            'last_name'     => 'required|min:4',
             'email'         => 'required|unique:users,email',
             'password'      => 'required|min:4',
             'actived'       => 'required|boolean'
@@ -102,7 +102,7 @@ class UsersController extends Controller {
 
         flash()->success('Técnico dado de alta con éxito.');
 
-        return redirect()->back();
+        return redirect('ospanel/users');
 
 	}
 

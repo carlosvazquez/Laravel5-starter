@@ -49,7 +49,7 @@
                     @else
                         {!! link_to_route('ospanel.reports.create', $title = 'Generar reporte', $parameters = array("id" => $install->id), $attributes = array('class' => 'btn btn-success')) !!}
                     @endif
-                    @if($install->cancel != null )
+                    @if($install->cancelacion != null )
                         {!! link_to_route('ospanel.cancels.show', $title = 'Ver cancelación', $parameters = array("id" => $install->id), $attributes = array('class' => 'btn btn-danger')) !!}
                     @else
                         {!! link_to_route('ospanel.cancels.create', $title = 'Generar cancelación', $parameters = array("id" => $install->id), $attributes = array('class' => 'btn btn-danger')) !!}

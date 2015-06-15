@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Acciones</div>
                     <div class="panel-body text-center">
-                        <a class="btn btn-success btn-lg" href="{{ url('/ospanel/installs/create') }}">Nueva instalación</a><br>
+                        <a class="btn btn-success btn-lg" href="{{ url('/ospanel/installs/create') }}">Nueva Orden de Servicio</a><br>
                     </div>
                 </div>
             </div>
@@ -15,7 +15,7 @@
         <hr/>
         <div class="row">
             <div class="col-xs-12">
-                <h2>Lista de instalaciones</h2>
+                <h2>Mis Órdenes de Servicio</h2>
                 @foreach ($installs as $install)
                     <table class="table table-striped table-bordered" style="width:100%;">
                         <tr class="success">

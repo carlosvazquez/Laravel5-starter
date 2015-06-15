@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Alta nueva installación</div>
+                    <div class="panel-heading">Alta nueva orden de servicio</div>
                     <div class="panel-body">
                         @if ($errors->any())
                             <div class="alert alert-danger" role="alert">

@@ -35,8 +35,8 @@ class InstallsController extends Controller {
 	{
         $installs = Install::paginate(15);
 
-		$title 	= 'Clientes';
-		$body 	= 'bla2';
+		$title 	= 'Eistel | Orden de Servicio';
+		$body 	= 'ospanel';
 
 		return view('ospanel.installs.index', compact('installs','title','body'));
 	}
@@ -52,7 +52,7 @@ class InstallsController extends Controller {
         $fecha = Date::now();
 
 
-        $title 	= 'Alta instalación';
+        $title 	= 'Alta orden de servicio';
         $body 	= 'ospanel registro-instalacion';
 
 
@@ -77,9 +77,9 @@ class InstallsController extends Controller {
 
         $rules = array(
             'os'        => 'required|alpha_num',
-            'name'      => 'required|unique:users,email',
-            'domicilio' => 'required|min:8',
-            'telefono'  => 'required|min:8',
+            'name'      => 'required',
+            'domicilio' => 'required|min:4',
+            'telefono'  => 'required|min:4',
         );
 
         $v = Validator::make($data, $rules);

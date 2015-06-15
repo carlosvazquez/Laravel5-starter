@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="text-center">
-                <h2>Reporte de Orden de Servicio: <strong>{{ $data->install->os }}</strong></h2>
+                <h2>Reporte de cancelación de OS: <strong>{{ $data->install->os }}</strong></h2>
             </div>
             <hr>
             <div class="row">
@@ -26,7 +26,6 @@
                         <div class="panel-body">
                             Día: <strong>{{ \Carbon\Carbon::now('America/Tijuana', $data->install->created_at ) }}</strong><br>
                             Estatus: <strong>{{ $data->install->status->slug  }}</strong><br>
-                            Completado: <strong>{{ \Carbon\Carbon::now('America/Tijuana', $data->install->updated_at ) }}</strong><br>
                         </div>
                     </div>
                 </div>

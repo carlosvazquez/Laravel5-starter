@@ -92,10 +92,10 @@ class CancelsController extends Controller {
         );
 
 
-        #$cancelacion = new Cancel($data);
+        $cancelacion = new Cancel($data);
 
-        #$install = Install::find($id);
-        #$install->cancelacion()->save($cancelacion);
+        $install = Install::find($id);
+        $install->cancelacion()->save($cancelacion);
 
 
         $actualizacion = Install::find($id);
@@ -127,7 +127,16 @@ class CancelsController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+        $data = Cancel::find($id);
+        if($data == NULL) {
+            flash()->error('La cancelación que busca no existe.');
+            return redirect('ospanel');
+        }
+
+        $title 	= 'OsPanel | Ver cancelación de OS';
+        $body 	= 'ospanel cancelacion-instalacion';
+        return view('ospanel.cancels.show', compact('title', 'body', 'data'));
+
 	}
 
 	/**
