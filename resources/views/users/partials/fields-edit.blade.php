@@ -12,9 +12,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('type', 'Tipo de usuario') !!}
-
     {!! Form::select('type', array('admin' => 'Administrador', 'contralor' => 'Contralor', 'supervisor' => 'Supervisor', 'tecnico' => 'Técnico'), $user->type, ['class'=>'form-control']) !!}
-
 </div>
 <div class="form-group">
     {!! Form::label('email', 'Correo electrónico') !!}

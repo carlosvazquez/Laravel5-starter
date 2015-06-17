@@ -1,3 +1,6 @@
+@if(isset($id))
+    {!! Form::hidden('id', $id, ['class'=>'form-control']) !!}
+@endif
 
 <div class="form-group">
     {!! Form::label('potencia', 'Potencia (numérico)') !!}
@@ -156,6 +159,7 @@
     </div>
 </div>
 <hr/>
+
 <div class="form-group">
     {!! Form::label('proveedor', 'Proveedor (alfanumérico)') !!}
     {!! Form::text('proveedor', null, ['class'=>'form-control input-lg']) !!}
@@ -168,10 +172,6 @@
     {!! Form::label('contratista', 'Contratista (alfanumérico)') !!}
     {!! Form::text('contratista', null, ['class'=>'form-control input-lg']) !!}
 </div>
-<div class="form-group" style="display: none;">
-    {!! Form::label('noempleado', 'No. Empleado') !!}
-    {!! Form::text('noempleado', null, ['class'=>'form-control input-lg']) !!}
-</div>
 <div class="form-group">
     {!! Form::label('vsw_ont', 'Versión de SW ONT (alfanumérico)') !!}
     {!! Form::text('vsw_ont', null, ['class'=>'form-control input-lg']) !!}
@@ -181,9 +181,12 @@
     {!! Form::number('velupload', null, ['class'=>'form-control input-lg', "step" => "0.01"]) !!}
 </div>
 
-<div class="well finalizar">
-    <div class="form-group">
-    {!! Form::label('reportstatus', 'Estado de la OS') !!}
-    {!! Form::select('reportstatus', array('0' => 'En progreso', '1' => 'Completado'), null, ['class'=>'form-control input-lg alert']) !!}
+<div class="well clearfix">
+    <div class="col-xs-12">
+        <h4>Cerrar orden de trabajo</h4>
+        <div class="form-group">
+            {!! Form::label('reportstatus', 'Estado') !!}
+            {!! Form::select('reportstatus', array('1' => 'Finalizar', '0' => 'En proceso'), '0', ['class'=>'form-control']) !!}
+        </div>
     </div>
 </div>

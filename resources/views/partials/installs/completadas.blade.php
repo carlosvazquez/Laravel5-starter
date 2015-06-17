@@ -13,7 +13,7 @@
                     <td><strong>{{ $completada->os }}</strong></td>
                     <td>{{ $completada->area->name }}</td>
                     <td>{{ $completada->division->name }}</td>
-                    <td><strong style="color:green;">{{ $completada->status->slug }}</strong></td>
+                    <td><strong class="statusT">{{ $completada->status->slug }}</strong></td>
                 </tr>
                 <tr>
                     <td colspan="4">Nombre: <strong>{{ $completada->name }}</strong></td>
@@ -27,20 +27,22 @@
                 <tr>
                     <td colspan="4">
                         Programado: <strong>{{ $completada->programado }}</strong> |
-                        Reprogramado: <strong>{{ $completada->reprogramado }}</strong> |
-                        Responsable: <strong>{{ $completada->responsable->first_name }} {{ $completada->responsable->last_name }}</strong>
-
+                        Reprogramado: <strong>{{ $completada->reprogramado }}</strong>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4">Última actualización: <strong>{{ $completada->updated_at }}</strong>
+                    <td colspan="4">
+                        Tecnico: <strong>{{ $completada->user->first_name }} {{ $completada->user->last_name }}</strong> No. Empleado: {{ $completada->user->username}}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">Actualizó: <strong>{{ $completada->responsable->first_name }} {{ $completada->responsable->last_name }}</strong> | Última actualización: <strong>{{ $completada->updated_at }}</strong>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4" class="text-right">
-                        <a class="btn btn-default btn-info" href="#">Ver cliente</a>
-                        <a class="btn btn-default btn-success" href="#">Reporte</a>
-                        <a class="btn btn-default btn-danger" href="#">Cancelar</a>
+                        {!! link_to_route('installs.show', $title = 'Ver cliente', $parameters = array($completada->id), $attributes = array('class' => 'btn btn-info')) !!}
+                        {!! link_to_route('reports.show', $title = 'Ver reporte', $parameters = array($completada->id), $attributes = array('class' => 'btn btn-success')) !!}
                     </td>
                 </tr>
             </table>

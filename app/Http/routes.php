@@ -26,6 +26,11 @@ Route::group(['middleware' => ['auth']], function()
 Route::group(['middleware' => ['auth', 'admin']], function()
 {
     Route::resource('users', 'UsersController');
+
+    Route::get('listados', 'ListadosController@index');
+    Route::get('listados/excel', 'ListadosController@excel');
+    Route::post('listados/excel', 'ListadosController@excel');
+
 });
 
 

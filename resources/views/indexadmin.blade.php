@@ -8,24 +8,17 @@
                 <div class="panel-heading">Acciones</div>
                 <div class="panel-body text-center">
                     @role('admin')
-                    Eres admin,
+                    <a class="btn btn-success" href="{{ url('/listados') }}">Listar todas las OS</a>
                     @endrole
                     @role('contralor')
-                    Eres contralor,
+                    <a class="btn btn-success" href="{{ url('/listados') }}">Listar todas las OS</a><br>
                     @endrole
                     @role('supervisor')
-                    Eres supervisor,
+                    Eres supervisor
                     @endrole
                     @role('tecnico')
-                    Eres tecnico,
+                    Eres tecnico
                     @endrole
-
-                    @if(Auth::check() && Auth::user()->is('admin|contralor'))
-                        lo ves si eres admin o contralor
-                    @endif
-                    @if(Auth::check() && Auth::user()->is('supervisor|tecnico'))
-                        lo ves si eres supervisor o tecnico
-                    @endif
 
                 </div>
             </div>

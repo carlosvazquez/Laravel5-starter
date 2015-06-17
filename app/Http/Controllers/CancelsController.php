@@ -9,6 +9,7 @@ use App\Install;
 use App\Report;
 use App\Cancel;
 use Auth;
+use App\Helpers\Owner;
 use Jenssegers\Date\Date as Date;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Request;
@@ -37,42 +38,23 @@ class CancelsController extends Controller {
 	 */
 	public function create()
 	{
+        $data = Request::all();
+        $id = Request::input('id');
 
-        $id = Request::all();
-        $id = implode(",", $id);
-        $instalacion_id = Install::find($id);
+        $pase = Owner::cancelacion($id);
 
-        if($instalacion_id->status_id == 6) {
-            flash()->error('La orden ya está cerrada.');
+        if($pase == false) {
+            flash()->error('La cancelación ya existe o no se puede editar.');
             return redirect('/');
         }
 
-        if ($instalacion_id == NULL) {
-            flash()->error('No existe la instalación.');
-            return redirect('/');
-        }
-        // Retornamos el numero de OS
-        $osinstalacion = $instalacion_id->os;
 
-        $currentuser = Auth::user()->id;
-        // Verificamos que exista una instalación propietaria de la cancelacion
-        if ($instalacion_id == NULL) {
-            flash()->error('No existe la instalación.');
-            return redirect('/');
-        }
-        // Verificamos que el tecnico sea el mismo quien crea el reporte de la instalacion
-        if ($instalacion_id->user_id != $currentuser) {
-            flash()->error('No eres el técnico responsable.');
-            return redirect('/');
-        }
+        $instalacion_id = Owner::instalacion_id($id);
 
-        // Verificamos que no exista ya un reporte de dicha instalacion
-        if(Cancel::find($id) != NULL) {
-            flash()->error('La cancelación ya existe.');
-            return redirect('/');
-        }
+        $osinstalacion = $instalacion_id;
 
-        $title 	= 'OsPanel | Creación de reporte de servicio';
+
+        $title 	= 'OsPanel | Creación de la cancelación de servicio';
         $body 	= 'ospanel cancelacion-instalacion';
 
         #flash()->success('El reporte fue creado con éxito.');

@@ -13,7 +13,7 @@
                     <td><strong>{{ $asignada->os }}</strong></td>
                     <td>{{ $asignada->area->name }}</td>
                     <td>{{ $asignada->division->name }}</td>
-                    <td><strong style="color:green;">{{ $asignada->status->slug }}</strong></td>
+                    <td><strong class="statusA"">{{ $asignada->status->slug }}</strong></td>
                 </tr>
                 <tr>
                     <td colspan="4">Nombre: <strong>{{ $asignada->name }}</strong></td>
@@ -27,20 +27,22 @@
                 <tr>
                     <td colspan="4">
                         Programado: <strong>{{ $asignada->programado }}</strong> |
-                        Reprogramado: <strong>{{ $asignada->reprogramado }}</strong> |
-                        Responsable: <strong>{{ $asignada->responsable->first_name }} {{ $asignada->responsable->last_name }}</strong>
-
+                        Reprogramado: <strong>{{ $asignada->reprogramado }}</strong>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4">Última actualización: <strong>{{ $asignada->updated_at }}</strong>
+                    <td colspan="4">
+                        Tecnico: <strong>{{ $asignada->user->first_name }} {{ $asignada->user->last_name }}</strong> No. Empleado: {{ $asignada->user->username}}
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="4">Actualizó: <strong>{{ $asignada->responsable->first_name }} {{ $asignada->responsable->last_name }}</strong> | Última actualización: <strong>{{ $asignada->updated_at }}</strong>
+                    </td>
+                </tr>
+
                 <tr>
                     <td colspan="4" class="text-right">
-                        <a class="btn btn-default btn-info" href="#">Ver cliente</a>
-                        <a class="btn btn-default btn-success" href="#">Reporte</a>
-                        <a class="btn btn-default btn-danger" href="#">Cancelar</a>
+                        {!! link_to_route('installs.show', $title = 'Ver cliente', $parameters = array($asignada->id), $attributes = array('class' => 'btn btn-info')) !!}
                     </td>
                 </tr>
             </table>

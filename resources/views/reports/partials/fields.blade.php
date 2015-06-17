@@ -159,6 +159,7 @@
     </div>
 </div>
 <hr/>
+
 <div class="form-group">
     {!! Form::label('proveedor', 'Proveedor (alfanumérico)') !!}
     {!! Form::text('proveedor', null, ['class'=>'form-control input-lg']) !!}
@@ -172,10 +173,6 @@
     {!! Form::text('contratista', null, ['class'=>'form-control input-lg']) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('noempleado', 'No. Empleado') !!}
-    <input class="form-control input-lg" id="disabledInput" placeholder="{{ $username }}" name="aaa" type="text" disabled>
-</div>
-<div class="form-group">
     {!! Form::label('vsw_ont', 'Versión de SW ONT (alfanumérico)') !!}
     {!! Form::text('vsw_ont', null, ['class'=>'form-control input-lg']) !!}
 </div>
@@ -183,9 +180,23 @@
     {!! Form::label('velupload', 'Velocidad de subida (numérico)') !!}
     {!! Form::number('velupload', null, ['class'=>'form-control input-lg', "step" => "0.01"]) !!}
 </div>
-<div class="well finalizar">
-    <div class="form-group">
-        {!! Form::label('reportstatus', 'Estado de la OS') !!}
-        {!! Form::select('reportstatus', array('0' => 'En progreso', '1' => 'Completado'), '0', ['class'=>'form-control input-lg alert']) !!}
+
+<div class="well clearfix">
+    <div class="col-xs-12">
+        <h4>Cerrar orden de trabajo</h4>
+        <div class="form-group">
+            <div class="radio">
+                <label>
+                    {!! Form::radio('reportstatus', '1') !!}
+                    Sí
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    {!! Form::radio('reportstatus', '0') !!}
+                    No
+                </label>
+            </div>
+        </div>
     </div>
 </div>

@@ -13,7 +13,7 @@
                     <td><strong>{{ $proceso->os }}</strong></td>
                     <td>{{ $proceso->area->name }}</td>
                     <td>{{ $proceso->division->name }}</td>
-                    <td><strong style="color:green;">{{ $proceso->status->slug }}</strong></td>
+                    <td><strong class="statusE">{{ $proceso->status->slug }}</strong></td>
                 </tr>
                 <tr>
                     <td colspan="4">Nombre: <strong>{{ $proceso->name }}</strong></td>
@@ -27,20 +27,23 @@
                 <tr>
                     <td colspan="4">
                         Programado: <strong>{{ $proceso->programado }}</strong> |
-                        Reprogramado: <strong>{{ $proceso->reprogramado }}</strong> |
-                        Responsable: <strong>{{ $proceso->responsable->first_name }} {{ $proceso->responsable->last_name }}</strong>
-
+                        Reprogramado: <strong>{{ $proceso->reprogramado }}</strong>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4">Última actualización: <strong>{{ $proceso->updated_at }}</strong>
+                    <td colspan="4">
+                        Tecnico: <strong>{{ $proceso->user->first_name }} {{ $proceso->user->last_name }}</strong> No. Empleado: {{ $proceso->user->username}}
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="4">Actualizó: <strong>{{ $proceso->responsable->first_name }} {{ $proceso->responsable->last_name }}</strong> | Última actualización: <strong>{{ $proceso->updated_at }}</strong>
+                    </td>
+                </tr>
+
                 <tr>
                     <td colspan="4" class="text-right">
-                        <a class="btn btn-default btn-info" href="#">Ver cliente</a>
-                        <a class="btn btn-default btn-success" href="#">Reporte</a>
-                        <a class="btn btn-default btn-danger" href="#">Cancelar</a>
+                        {!! link_to_route('installs.show', $title = 'Ver cliente', $parameters = array($proceso->id), $attributes = array('class' => 'btn btn-info')) !!}
+                        {!! link_to_route('reports.show', $title = 'Ver reporte', $parameters = array($proceso->id), $attributes = array('class' => 'btn btn-success')) !!}
                     </td>
                 </tr>
             </table>

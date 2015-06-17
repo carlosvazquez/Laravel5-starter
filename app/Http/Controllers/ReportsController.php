@@ -8,6 +8,9 @@ use App\User as User;
 use App\Install;
 use App\Report;
 use Auth;
+
+use App\Helpers\Owner;
+
 use HttpRequestDataShare;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Request;
@@ -32,10 +35,11 @@ class ReportsController extends Controller {
         #$reporte->download = '322';
         #$reporte->upload = '431';
 
+
         #$instalacion = Install::find(2);
         #$instalacion->reporte()->save($reporte);
         #dd($instalacion);
-        flash()->error('No tiene acceso a la url.');
+        flash()->error('True No tiene acceso a la url.');
         return redirect('/');
 
 
@@ -49,30 +53,20 @@ class ReportsController extends Controller {
 	 */
 	public function create()
 	{
+        $data = Request::all();
+        $id = Request::input('id');
 
-        $id = Request::all();
-        $id = implode(",", $id);
-        $instalacion_id = Install::find($id);
-        $osinstalacion = $instalacion_id->os;
-        $currentuser = Auth::user()->id;
-        $username = Auth::user()->username;
-        // Verificamos que exista una instalación propietaria del reporte
-        if ($instalacion_id == NULL) {
-            flash()->error('No existe la instalación.');
-            return redirect('/');
-        }
-        // Verificamos que el tecnico sea el mismo quien crea el reporte de la instalacion
-        if ($instalacion_id->user_id != $currentuser) {
-            flash()->error('No eres el técnico responsable.');
+        $pase = Owner::firewall($id);
+
+        if($pase == false) {
+            flash()->error('El reporte ya existe o no se puede editar.');
             return redirect('/');
         }
 
-        // Verificamos que no exista ya un reporte de dicha instalacion
-        if(Report::find($id) != NULL) {
-            flash()->error('El reporte ya existe.');
-            return redirect('/');
-        }
 
+        $instalacion_id = Owner::instalacion_id($id);
+
+        $osinstalacion = $instalacion_id;
 
         $title 	= 'OsPanel | Creación de reporte de servicio';
         $body 	= 'ospanel reporte-instalacion';
@@ -159,8 +153,8 @@ class ReportsController extends Controller {
 	 */
 	public function edit($id)
 	{
+
         $reporte = Report::findOrfail($id);
-        $username = Auth::user()->username;
 
         if($reporte->reportstatus == 1) {
             flash()->error('La instalación ya está cerrada.');
@@ -181,16 +175,22 @@ class ReportsController extends Controller {
 	 */
 	public function update($id)
 	{
-        $data = Report::findOrfail($id);
+
+        $data = Report::find($id);
 
         $data->fill(Request::all());
         $data->save();
 
-        $reportstatus = $data['reportstatus'];
+        $data = Report::find($id);
+
+        $reportstatus = $data->reportstatus;
+
+        $instalacion_id = $data->install->id;
+
 
         if($reportstatus == 1 ){
 
-            $actualizacion = Install::find($reportstatus);
+            $actualizacion = Install::find($instalacion_id);
 
             $cambios = array(
                 'status_id' => '6'

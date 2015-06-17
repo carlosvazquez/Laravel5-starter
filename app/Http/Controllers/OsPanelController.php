@@ -40,6 +40,7 @@ class OsPanelController extends Controller {
                 ->with('responsable')
                 ->with('reporte')
                 ->with('cancelacion')
+                ->where('status_id', '=', '3' )
                 ->where('created_at', '>=', $this->hoy )
                 ->where('created_at', '>=', $this->hoy )
                 ->orderBy('created_at', 'DESC')->get();

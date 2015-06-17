@@ -13,7 +13,7 @@
                     <td><strong>{{ $confirmada->os }}</strong></td>
                     <td>{{ $confirmada->area->name }}</td>
                     <td>{{ $confirmada->division->name }}</td>
-                    <td><strong style="color:green;">{{ $confirmada->status->slug }}</strong></td>
+                    <td><strong class="statusF">{{ $confirmada->status->slug }}</strong></td>
                 </tr>
                 <tr>
                     <td colspan="4">Nombre: <strong>{{ $confirmada->name }}</strong></td>
@@ -27,15 +27,19 @@
                 <tr>
                     <td colspan="4">
                         Programado: <strong>{{ $confirmada->programado }}</strong> |
-                        Reprogramado: <strong>{{ $confirmada->reprogramado }}</strong> |
-                        Responsable: <strong>{{ $confirmada->responsable->first_name }} {{ $confirmada->responsable->last_name }}</strong>
-
+                        Reprogramado: <strong>{{ $confirmada->reprogramado }}</strong>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4">Última actualización: <strong>{{ $confirmada->updated_at }}</strong>
+                    <td colspan="4">
+                        Tecnico: <strong>{{ $confirmada->user->first_name }} {{ $confirmada->user->last_name }}</strong> No. Empleado: {{ $confirmada->user->username}}
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="4">Actualizó: <strong>{{ $confirmada->responsable->first_name }} {{ $confirmada->responsable->last_name }}</strong> | Última actualización: <strong>{{ $confirmada->updated_at }}</strong>
+                    </td>
+                </tr>
+
                 <tr>
                     <td colspan="4" class="text-right">
                         <a class="btn btn-default btn-info" href="#">Ver cliente</a>

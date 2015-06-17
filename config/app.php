@@ -164,8 +164,13 @@ return [
          * Date customization with Carbon functions https://github.com/jenssegers/laravel-date
          */
         'Jenssegers\Date\DateServiceProvider',
+        /*
+         * Custom helper for installs owners
+         */
+        'App\Providers\HelperServiceProvider',
 
-	],
+
+    ],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -218,6 +223,8 @@ return [
 //        'Html'    => 'Illuminate\Html\HtmlFacade',
 		'Debugbar' 	=> 'Barryvdh\Debugbar\Facade',
         'Flash'     => 'Laracasts\Flash\Flash',
+        'Owner'     => 'App\Helpers\Owner',
+
 
 	],
 

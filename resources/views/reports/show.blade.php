@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-xs-12 col-md-6 col-lg-6">
                     <div class="panel panel-default height">
-                        <div class="panel-heading">Datos</div>
+                        <div class="panel-heading">Datos del cliente</div>
                         <div class="panel-body">
                             Nombre: <strong>{{ $data->install->name }}</strong><br>
                             Domicilio: {{ $data->install->domicilio }}<br>
@@ -27,6 +27,8 @@
                             Día: <strong>{{ \Carbon\Carbon::now('America/Tijuana', $data->install->created_at ) }}</strong><br>
                             Estatus: <strong>{{ $data->install->status->slug  }}</strong><br>
                             Completado: <strong>{{ \Carbon\Carbon::now('America/Tijuana', $data->install->updated_at ) }}</strong><br>
+                            Técnico: <strong>{{ $data->install->user->first_name }} {{ $data->install->user->last_name }}</strong><br>
+                            No. Empleado: <strong>{{ $data->install->user->username }}</strong><br>
                         </div>
                     </div>
                 </div>
@@ -46,7 +48,7 @@
                             <th class="text-center"><strong>Potencia</strong></th>
                             <th class="text-center"><strong>Download</strong></th>
                             <th class="text-center"><strong>Upload</strong></th>
-                            <th class="text-center"><strong>DTO</strong></th>
+                            <th class="text-center"><strong>Distrito</strong></th>
                             <th class="text-center"><strong>Terminal</strong></th>
                             <th class="text-center"><strong>ONT</strong></th>
                             <th class="text-center"><strong>Opción</strong></th>
@@ -120,7 +122,7 @@
 
             </div>
         </div>
-        <div class="col-xs-12">{!! link_to_route('installs.show', $title = 'Regresar', $parameters = array('id' => $data->install_id), $attributes = array('class'=>'btn btn-success btn-lg', 'aria-label'=>'Left Align"')) !!}</div>
+        <div class="col-xs-12">{!! link_to_route('installs.show', $title = 'Regresar', $parameters = array('id' => $data->install_id), $attributes = array('class'=>'btn btn-success', 'aria-label'=>'Left Align"')) !!}</div>
     </div>
 </div>
 @endsection

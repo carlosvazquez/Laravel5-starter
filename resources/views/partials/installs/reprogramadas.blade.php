@@ -13,7 +13,7 @@
                     <td><strong>{{ $reprogramada->os }}</strong></td>
                     <td>{{ $reprogramada->area->name }}</td>
                     <td>{{ $reprogramada->division->name }}</td>
-                    <td><strong style="color:green;">{{ $reprogramada->status->slug }}</strong></td>
+                    <td><strong class="statusR">{{ $reprogramada->status->slug }}</strong></td>
                 </tr>
                 <tr>
                     <td colspan="4">Nombre: <strong>{{ $reprogramada->name }}</strong></td>
@@ -27,20 +27,22 @@
                 <tr>
                     <td colspan="4">
                         Programado: <strong>{{ $reprogramada->programado }}</strong> |
-                        Reprogramado: <strong>{{ $reprogramada->reprogramado }}</strong> |
-                        Responsable: <strong>{{ $reprogramada->responsable->first_name }} {{ $reprogramada->responsable->last_name }}</strong>
-
+                        Reprogramado: <strong>{{ $reprogramada->reprogramado }}</strong>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4">Última actualización: <strong>{{ $reprogramada->updated_at }}</strong>
+                    <td colspan="4">
+                        Tecnico: <strong>{{ $reprogramada->user->first_name }} {{ $reprogramada->user->last_name }}</strong> No. Empleado: {{ $reprogramada->user->username}}
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="4">Actualizó: <strong>{{ $reprogramada->responsable->first_name }} {{ $reprogramada->responsable->last_name }}</strong> | Última actualización: <strong>{{ $reprogramada->updated_at }}</strong>
+                    </td>
+                </tr>
+
                 <tr>
                     <td colspan="4" class="text-right">
-                        <a class="btn btn-default btn-info" href="#">Ver cliente</a>
-                        <a class="btn btn-default btn-success" href="#">Reporte</a>
-                        <a class="btn btn-default btn-danger" href="#">Cancelar</a>
+                        {!! link_to_route('installs.show', $title = 'Ver cliente', $parameters = array($reprogramada->id), $attributes = array('class' => 'btn btn-info')) !!}
                     </td>
                 </tr>
             </table>
