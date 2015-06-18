@@ -2,16 +2,8 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Acciones</div>
-                <div class="panel-body text-center">
-                    <a class="btn btn-success" href="{{ url('/') }}">Inicio</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('layouts.panel.panelhead')
+
     <hr/>
 	<div class="row">
 		<div class="col-xs-12">

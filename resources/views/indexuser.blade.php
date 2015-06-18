@@ -63,3 +63,11 @@
 
     </div> <!-- .container -->
 @endsection
+@section('mi_script')
+<script type="text/javascript">
+    $(window).ready( function() {
+        setInterval(function () {
+            location.reload();}, 300000);
+    });
+</script>
+@stop

@@ -47,4 +47,3 @@ class Install extends Model {
         return $this->hasOne('App\Cancel');
     }
 }
-

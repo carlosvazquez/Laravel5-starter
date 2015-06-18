@@ -168,6 +168,10 @@ return [
          * Custom helper for installs owners
          */
         'App\Providers\HelperServiceProvider',
+		/*
+         * Laravel Excel v2.0.0 for Laravel 5
+         */
+		'Maatwebsite\Excel\ExcelServiceProvider',
 
 
     ],
@@ -224,6 +228,7 @@ return [
 		'Debugbar' 	=> 'Barryvdh\Debugbar\Facade',
         'Flash'     => 'Laracasts\Flash\Flash',
         'Owner'     => 'App\Helpers\Owner',
+		'Excel' => 'Maatwebsite\Excel\Facades\Excel',
 
 
 	],

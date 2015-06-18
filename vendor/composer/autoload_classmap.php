@@ -21,6 +21,7 @@ return array(
     'CreateRoleUserTable' => $baseDir . '/database/migrations/2015_01_15_114412_create_role_user_table.php',
     'CreateRolesTable' => $baseDir . '/database/migrations/2015_01_15_105324_create_roles_table.php',
     'CreateStatusesTable' => $baseDir . '/database/migrations/2015_06_08_011636_create_statuses_table.php',
+    'CreateTestsTable' => $baseDir . '/database/migrations/2015_06_17_084522_create_tests_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'DivisionTableSeeder' => $baseDir . '/database/seeds/DivisionTableSeeder.php',

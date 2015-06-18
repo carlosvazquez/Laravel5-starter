@@ -70,7 +70,7 @@ return [
 		"string"  => "El :attribute must be :size characters.",
 		"array"   => "El :attribute must contain :size items.",
 	],
-	"unique"               => "El :attribute has already been taken.",
+	"unique"               => "La :attribute ya está en uso.",
 	"url"                  => "El :attribute format is invalid.",
 	"timezone"             => "El :attribute must be a valid zone.",
 

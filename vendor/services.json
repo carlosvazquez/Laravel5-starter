@@ -32,7 +32,8 @@
         "Bican\\Roles\\RolesServiceProvider",
         "Laracasts\\Flash\\FlashServiceProvider",
         "Jenssegers\\Date\\DateServiceProvider",
-        "App\\Providers\\HelperServiceProvider"
+        "App\\Providers\\HelperServiceProvider",
+        "Maatwebsite\\Excel\\ExcelServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -55,7 +56,8 @@
         "Bican\\Roles\\RolesServiceProvider",
         "Laracasts\\Flash\\FlashServiceProvider",
         "Jenssegers\\Date\\DateServiceProvider",
-        "App\\Providers\\HelperServiceProvider"
+        "App\\Providers\\HelperServiceProvider",
+        "Maatwebsite\\Excel\\ExcelServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

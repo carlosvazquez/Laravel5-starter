@@ -29,6 +29,6 @@ php artisan make:migration:schema create_clientes_table --schema="name:string,ca
 	@yield('content')
 	<!-- Scripts -->
 	<script src="{{ asset('/js/app.js') }}"></script>
-
+	@yield('mi_script')
 </body>
 </html>

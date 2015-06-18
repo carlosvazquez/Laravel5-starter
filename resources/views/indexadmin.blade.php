@@ -2,27 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Acciones</div>
-                <div class="panel-body text-center">
-                    @role('admin')
-                    <a class="btn btn-success" href="{{ url('/listados') }}">Listar todas las OS</a>
-                    @endrole
-                    @role('contralor')
-                    <a class="btn btn-success" href="{{ url('/listados') }}">Listar todas las OS</a><br>
-                    @endrole
-                    @role('supervisor')
-                    Eres supervisor
-                    @endrole
-                    @role('tecnico')
-                    Eres tecnico
-                    @endrole
-
-                </div>
-            </div>
-        </div>
+@include('layouts.panel.panelhead')
     </div>  <!-- .row -->
     <div class="row">
         <div class="col-xs-12">
@@ -50,3 +30,11 @@
 
 </div> <!-- .container -->
 @endsection
+@section('mi_script')
+<script type="text/javascript">
+    $(window).ready( function() {
+        setInterval(function () {
+            location.reload();}, 180000);
+    });
+</script>
+@stop

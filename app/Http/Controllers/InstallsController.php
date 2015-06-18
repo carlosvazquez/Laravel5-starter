@@ -69,8 +69,8 @@ class InstallsController extends Controller {
         $data = Request::all();
 
 
-        $rules = array(
-            'os'        => 'required|alpha_num',
+		$rules = array(
+			'os' 		=> 'required|unique:installs|max:255',
             'name'      => 'required',
             'domicilio' => 'required|min:4',
             'telefono'  => 'required|min:4',
@@ -78,11 +78,11 @@ class InstallsController extends Controller {
 
         $v = Validator::make($data, $rules);
 
-        if ($v->fails()) {
+		if ($v->fails()) {
             flash()->error('Hay errores en el formulario. No se guardó el registro.');
             return redirect()->back()
                 ->withErrors($v->errors())
-                ->withInputs(Request::except('password'));
+                ->withInputs(Request::except('os'));
 
         }
 
