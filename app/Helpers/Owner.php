@@ -22,7 +22,7 @@ class Owner {
         if ($search && $existe != true) {
             $status = $search->status_id;
 
-            if ($usuario->type == 'admin' || $usuario->type == 'contralor') {
+            if ($usuario->type == 'admin' || $usuario->type == 'contralor' || $usuario->type == 'contralor') {
 
                 //Existe el post y soy admin o contralor devuelve true
                 return true;
@@ -31,7 +31,7 @@ class Owner {
 
             if ($usuario->id == $search->user_id) {
 
-                if (in_array($status, array(1,2,3,4))) {
+                if (in_array($status, array(1,2,3,4,5,6,7))) {
 
                     //si existe y se puede editar
                     return true;
@@ -66,7 +66,7 @@ class Owner {
         if ($search && $existe != true) {
             $status = $search->status_id;
 
-            if ($usuario->type == 'admin' || $usuario->type == 'contralor') {
+            if ($usuario->type == 'admin' || $usuario->type == 'contralor' || $usuario->type == 'tecnico') {
 
                 //Existe el post y soy admin o contralor devuelve true
                 return true;
@@ -75,7 +75,7 @@ class Owner {
 
             if ($usuario->id == $search->user_id) {
 
-                if (in_array($status, array(1,2,3,4))) {
+                if (in_array($status, array(1,2,3,4,5,6,7))) {
 
                     //si existe y se puede editar
                     return true;

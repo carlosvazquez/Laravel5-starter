@@ -156,7 +156,7 @@ class ReportsController extends Controller {
 
         $reporte = Report::findOrfail($id);
 
-        if($reporte->reportstatus == 1) {
+        if($reporte->reportstatus == 7) {
             flash()->error('La instalación ya está cerrada.');
             return redirect('/');
         }

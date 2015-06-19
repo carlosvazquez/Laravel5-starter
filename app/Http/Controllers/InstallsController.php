@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Validator;
 use Laracasts\Flash\Flash;
 use Illuminate\Support\Facades\Request;
 
-
 class InstallsController extends Controller {
 
 	/**

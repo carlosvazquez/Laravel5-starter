@@ -15,14 +15,11 @@ class Install extends Model {
         'domicilio',
         'status_id',
         'programado',
-        'report_id',
-        'cancel_id',
         'reprogramado',
         'userupdate',
         'actived',
         'updated_at'
     ];
-
 
 
     public function user() {

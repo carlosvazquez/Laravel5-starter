@@ -41,8 +41,8 @@ class OsPanelController extends Controller {
                 ->with('reporte')
                 ->with('cancelacion')
                 ->where('status_id', '=', '3' )
-                ->where('created_at', '>=', $this->hoy )
-                ->where('created_at', '>=', $this->hoy )
+                #->where('created_at', '>=', $this->hoy )
+                #->where('created_at', '>=', $this->hoy )
                 ->orderBy('created_at', 'DESC')->get();
 
             $canceladas = Install::with('user')
@@ -53,7 +53,7 @@ class OsPanelController extends Controller {
                 ->with('reporte')
                 ->with('cancelacion')
                 ->where('status_id', '=', '5' )
-                ->where('created_at', '>=', $this->hoy )
+                #->where('created_at', '>=', $this->hoy )
                 ->orderBy('created_at', 'DESC')->get();
 
             $completadas = Install::with('user')
@@ -64,7 +64,7 @@ class OsPanelController extends Controller {
                 ->with('reporte')
                 ->with('cancelacion')
                 ->where('status_id', '=', '6' )
-                ->where('created_at', '>=', $this->hoy )
+                #->where('created_at', '>=', $this->hoy )
                 ->orderBy('created_at', 'DESC')->get();
 
             $procesos = Install::with('user')
@@ -75,7 +75,7 @@ class OsPanelController extends Controller {
                 ->with('reporte')
                 ->with('cancelacion')
                 ->where('status_id', '=', '1' )
-                ->where('created_at', '>=', $this->hoy )
+                #->where('created_at', '>=', $this->hoy )
                 ->orderBy('created_at', 'DESC')->get();
             $reprogramadas = Install::with('user')
                 ->with('area')
@@ -95,7 +95,7 @@ class OsPanelController extends Controller {
                 ->with('reporte')
                 ->with('cancelacion')
                 ->where('status_id', '=', '2' )
-                ->where('created_at', '>=', $this->hoy )
+                #->where('created_at', '>=', $this->hoy )
                 ->orderBy('created_at', 'DESC')->get();
 
             $title 	= 'OsPanel | Ordenes de Servicio';
@@ -112,7 +112,7 @@ class OsPanelController extends Controller {
                 ->with('cancelacion')
                 ->where('user_id', $mio)
                 ->where('status_id', '!=', '7')
-                ->where('created_at', '>=', $this->hoy)
+                #->where('created_at', '>=', $this->hoy)
                 ->orderBy('status_id', 'ASC')->get();
 
 
