@@ -8,7 +8,7 @@
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
@@ -30,5 +30,13 @@ php artisan make:migration:schema create_clientes_table --schema="name:string,ca
 	<!-- Scripts -->
 	<script src="{{ asset('/js/app.js') }}"></script>
 	@yield('mi_script')
+    <script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker').datetimepicker();
+        });
+    </script>
+
 </body>
 </html>
