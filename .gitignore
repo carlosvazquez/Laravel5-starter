@@ -4,6 +4,7 @@
 /bootstrap/compiled.php
 .idea/
 .idea/*
+.idea/workspace.xml
 .env.*.php
 .env.php
 .env

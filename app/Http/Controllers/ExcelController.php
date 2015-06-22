@@ -25,6 +25,7 @@ class ExcelController extends Controller {
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -200,6 +201,7 @@ class ExcelController extends Controller {
             'Horario de llegada al domicilio'
         ));
 
+
         foreach($instalaciones as $key => $value)
         {
 
@@ -210,8 +212,8 @@ class ExcelController extends Controller {
                 $value->name,
                 $value->domicilio,
                 $value->telefono,
-                $value->created_at,
-                $value->updated_at,
+                Carbon::parse($value->created_at)->toDateString(),
+                Carbon::parse($value->updated_at)->toDateString(),
                 $value->reporte['potencia'],
                 $value->reporte['download'],
                 $value->reporte['upload'],
@@ -243,11 +245,10 @@ class ExcelController extends Controller {
                 $value->user['username'],
                 $value->user['vsw_ont'],
                 $value->user['velupload'],
-                $value->reporte['created_at'],
-                $value->reporte['updated_at']
-                ));
+                Carbon::parse($value->created_at)->toDateString(),
+                Carbon::parse($value->updated_at)->toDateString(),
+            ));
         }
-
 
         Excel::create($reportname, function($excel) use($data) {
             // Set the title
