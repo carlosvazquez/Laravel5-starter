@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efbb3c58-204f-45b1-9b59-232bcd39f2b0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/base1.zip" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ExcelController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ExcelController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Install.php" afterPath="$PROJECT_DIR$/app/Install.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/InstallsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/InstallsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/OsPanelController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/OsPanelController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Helpers/Owner.php" afterPath="$PROJECT_DIR$/app/Helpers/Owner.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Report.php" afterPath="$PROJECT_DIR$/app/Report.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/excel/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/excel/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="playcreativepiano.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +30,8 @@
       <file leaf-file-name="ExcelController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ExcelController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65826774" vertical-offset="2470" max-vertical-offset="5491">
-              <caret line="152" column="43" selection-start-line="151" selection-start-column="52" selection-end-line="152" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.06031746" vertical-offset="6574" max-vertical-offset="11096">
+              <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
               <folding>
                 <element signature="e#39#61#0#PHP" expanded="true" />
               </folding>
@@ -53,8 +42,8 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/excel/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="961" max-vertical-offset="2204">
-              <caret line="70" column="58" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2698" max-vertical-offset="4408">
+              <caret line="71" column="58" selection-start-line="71" selection-start-column="58" selection-end-line="71" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -117,8 +106,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ReportsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OsPanelController.php" />
         <option value="$PROJECT_DIR$/resources/views/excel/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ExcelController.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ExcelController.php" />
       </list>
     </option>
   </component>
@@ -384,9 +373,6 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="bbe74f74-9aea-472b-b233-1c3f6a5f73d7" server_name="eistel">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -394,6 +380,9 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="bbe74f74-9aea-472b-b233-1c3f6a5f73d7" server_name="eistel">
       <method />
     </configuration>
     <list size="0" />
@@ -686,13 +675,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/listados/index.blade.php">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.197092" vertical-offset="0" max-vertical-offset="1349">
           <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ListadosController.php">
@@ -780,13 +769,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/InstallsController.php">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.02746365" vertical-offset="1484" max-vertical-offset="2869">
           <caret line="91" column="37" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Helpers/Owner.php">
@@ -798,8 +787,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/excel/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="961" max-vertical-offset="2204">
-          <caret line="70" column="58" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2698" max-vertical-offset="4408">
+          <caret line="71" column="58" selection-start-line="71" selection-start-column="58" selection-end-line="71" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -808,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.81732285" vertical-offset="1571" max-vertical-offset="3686">
           <caret line="115" column="24" selection-start-line="115" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -816,14 +804,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14592934" vertical-offset="0" max-vertical-offset="651">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ExcelController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65826774" vertical-offset="2470" max-vertical-offset="5491">
-          <caret line="152" column="43" selection-start-line="151" selection-start-column="52" selection-end-line="152" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.06031746" vertical-offset="6574" max-vertical-offset="11096">
+          <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
           <folding>
             <element signature="e#39#61#0#PHP" expanded="true" />
           </folding>
