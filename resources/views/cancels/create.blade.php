@@ -16,7 +16,7 @@
                                 </ul>
                             </div>
                         @endif
-                        {!! Form::open(['route' => 'cancels.store', 'method' => 'POST']) !!}
+                        {!! Form::open(['route' => 'cancels.store', 'method' => 'POST', 'onsubmit' => 'return ConfirmDelete()']) !!}
                         @include('cancels.partials.fields')
                             <div class="form-group text-center">
                             {!! Form::submit('Finalizar cancelación', ['class'=>'btn btn-default btn-success btn-lg']); !!}
@@ -28,5 +28,4 @@
             </div>
         </div>
     </div>
-
 @endsection

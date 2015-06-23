@@ -1,3 +1,4 @@
+
 @if(isset($id))
     {!! Form::hidden('id', $id, ['class'=>'form-control']) !!}
 @endif
@@ -193,9 +194,33 @@
             </div>
             <div class="radio">
                 <label>
-                    {!! Form::radio('reportstatus', '0') !!}
+                    {!! Form::radio('reportstatus', '0', true) !!}
                     No
                 </label>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class='col-xs-12'>
+        <div class="form-group">
+            {!! Form::label('horainicio', 'Día/Hora de inicio') !!}
+            <div class='input-group date' id='datetimepicker'>
+                <input id="horainicio" name="horainicio" type='text' class="form-control input-lg" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div class='col-xs-12'>
+        <div class="form-group">
+            {!! Form::label('horafinal', 'Día/Hora de finalización') !!}
+            <div class='input-group date' id='datetimepicker2'>
+                <input id="horafin" name="horafin" type='text' class="form-control input-lg" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
             </div>
         </div>
     </div>

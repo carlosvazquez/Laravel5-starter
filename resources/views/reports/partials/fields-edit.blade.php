@@ -186,7 +186,31 @@
         <h4>Cerrar orden de trabajo</h4>
         <div class="form-group">
             {!! Form::label('reportstatus', 'Estado') !!}
-            {!! Form::select('reportstatus', array('1' => 'Finalizar', '0' => 'En proceso'), '0', ['class'=>'form-control']) !!}
+            {!! Form::select('reportstatus', array('1' => 'Finalizar', '0' => 'En proceso'), null, ['class'=>'form-control']) !!}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class='col-xs-12'>
+        <div class="form-group">
+            {!! Form::label('horainicio', 'Día/Hora de inicio') !!}
+            <div class='input-group date' id='datetimepicker'>
+                {!! Form::text('horainicio', null, ['class'=>'form-control input-lg']) !!}
+                <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div class='col-xs-12'>
+        <div class="form-group">
+            {!! Form::label('horafinal', 'Día/Hora de finalización') !!}
+            <div class='input-group date' id='datetimepicker2'>
+                {!! Form::text('horafin', null, ['class'=>'form-control input-lg']) !!}
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+            </div>
         </div>
     </div>
 </div>

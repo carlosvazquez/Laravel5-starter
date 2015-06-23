@@ -29,7 +29,9 @@ class Report extends Model {
         'noempleado',
         'vsw_ont',
         'velupload',
-        'reportstatus'
+        'reportstatus',
+        'horainicio',
+        'horafin'
     ];
     public function install()
     {

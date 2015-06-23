@@ -84,9 +84,9 @@ class ReportsController extends Controller {
 	public function store()
 	{
         $data = Request::all();
-
         $id = $data['id'];
         $reportstatus = $data['reportstatus'];
+
 
         $rules = array(
 
