@@ -19,3 +19,4 @@ database/migrations/*.php
 database/seeds/*.php
 
 vendor/
+vendor/*
