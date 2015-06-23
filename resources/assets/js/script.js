@@ -14,7 +14,7 @@ $(function () {
 });
 
 function ConfirmDelete() {
-    var x = confirm("¿Está seguro en cancelar la orden?");
+    var x = confirm("¿Está seguro de cancelar la orden?");
     if (x)
         return true;
     else
