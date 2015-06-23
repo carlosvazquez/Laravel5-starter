@@ -40,7 +40,6 @@ class CancelsController extends Controller {
 	{
         $data = Request::all();
         $id = Request::input('id');
-
         $pase = Owner::cancelacion($id);
 
         if($pase == false) {

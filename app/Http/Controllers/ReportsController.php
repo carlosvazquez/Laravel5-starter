@@ -84,9 +84,9 @@ class ReportsController extends Controller {
 	public function store()
 	{
         $data = Request::all();
-
         $id = $data['id'];
         $reportstatus = $data['reportstatus'];
+
 
         $rules = array(
 
@@ -179,6 +179,7 @@ class ReportsController extends Controller {
         $data = Report::find($id);
 
         $data->fill(Request::all());
+
         $data->save();
 
         $data = Report::find($id);
