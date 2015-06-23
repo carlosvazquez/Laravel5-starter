@@ -15,7 +15,7 @@
     {!! Form::number('upload', null, ['class'=>'form-control input-lg', "step" => "0.01"]) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('dto', 'Distrito') !!}
+    {!! Form::label('dto', 'DistritoTEST') !!}
     {!! Form::text('dto', null, ['class'=>'form-control input-lg']) !!}
 </div>
 <div class="form-group">
