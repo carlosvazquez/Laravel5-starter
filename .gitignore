@@ -20,3 +20,7 @@ database/seeds/*.php
 
 vendor/
 vendor/*
+nbproject/
+nbproject/*
+node_modules/
+node_modules/*
