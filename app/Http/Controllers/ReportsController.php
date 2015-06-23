@@ -179,6 +179,7 @@ class ReportsController extends Controller {
         $data = Report::find($id);
 
         $data->fill(Request::all());
+
         $data->save();
 
         $data = Report::find($id);
