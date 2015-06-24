@@ -248,7 +248,7 @@ class ExcelController extends Controller {
                 $value->user['vsw_ont'],
                 $value->user['velupload'],
                 Carbon::parse($value->created_at)->toDateString(),
-                Carbon::parse($value->updated_at)->toDateString(),
+                Carbon::parse($value->reporte['horainicio'])->toTimeString(),
             ));
         }
 
