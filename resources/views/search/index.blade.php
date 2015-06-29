@@ -9,68 +9,90 @@
                     <h3 class="panel-title">Buscador</h3>
                 </div>
                 <div class="panel-body">
+
                     <div class="row">
-                        <div class="col-xs-12">
+                        {!! Form::open(array('action' => 'SearchController@results')) !!}
+                        <div class="col-xs-12 col-sm-6">
+                            @role('admin')
                             <div class="form-group">
-                                   <div class="well">
-                                       {!! Form::open(array('action' => 'SearchController@index')) !!}
-                                       <div class="form-group">
-                                       {!! Form::label('campo_os', 'Orden de Servicio') !!}
-                                       {!! Form::text('campo_os', null, array('class' => 'form-control')) !!}
-                                       </div>
-                                       {!! Form::submit('Buscar', array('class' => 'btn btn-success')) !!}
-                                   </div>
+                                {!! Form::label('empleado', 'Generar por técnico:') !!}
+                                <div class="well">
+                                    <label>
+                                        <input type="radio" name="empleado" id="todos" value="0" checked>
+                                        Todos los técnicos
+                                    </label>
+                                </div>
+                                <div class="well">
+                                    <label>
+                                        <input type="radio" name="empleado" id="unico" value="1" >
+                                        Técnico específico
+                                    </label>
+                                    {!! Form::select('id_empleado', $tecnicos, null, ['class'=>'form-control']) !!}
+                                </div>
                             </div>
+                            @endrole
+
+
+                            <div class="form-group">
+                                {!! Form::label('status', 'Generar por estatus:') !!}
+                                <div class="well">
+                                    <label>
+                                        <input type="radio" name="status" id="status" value="0" checked>
+                                        Todos los estatus de OS
+                                    </label>
+                                </div>
+                                <div class="well">
+                                    <label>
+                                        <input type="radio" name="status" id="status" value="1" >
+                                        Estatus específico de OS
+                                    </label>
+                                    {!! Form::select('id_status', $status, null, ['class'=>'form-control']) !!}
+                                </div>
+                            </div> <!-- .form-group -->
+
                         </div>
-                    </div>
-                    {!! Form::close() !!}
-                </div>
+                        <div class="col-xs-12 col-sm-6">
+
+                            @role('admin')
+                            <div class="form-group">
+                                {!! Form::label('area', 'Generar por área:') !!}
+                                <div class="well">
+                                    <label>
+                                        <input type="radio" name="area" id="area" value="0" checked>
+                                        Todas las áreas
+                                    </label>
+                                </div>
+                                <div class="well">
+                                    <label>
+                                        <input type="radio" name="area" id="area" value="1" >
+                                        Área específica
+                                    </label>
+                                    {!! Form::select('id_area', $area, null, ['class'=>'form-control']) !!}
+                                </div>
+                            </div> <!-- .form-group -->
+                            @endrole
+
+                            {!! Form::label('ini_fecha', 'Fecha inicial:') !!}
+                            <div class="form-group form-group-lg">
+                                {!! Form::date('ini_dia', \Carbon\Carbon::now(), array('class' => 'form-control', 'id'=>'formGroupInputLarge')); !!}
+                            </div>
+                            {!! Form::label('fin_fecha', 'Fecha final') !!}
+                            <div class="form-group form-group-lg">
+                                {!! Form::date('fin_dia', \Carbon\Carbon::now(), array('class' => 'form-control', 'id'=>'formGroupInputLarge')); !!}
+                            </div>
+                            <div class="form-group form-group-lg">
+                                {!! Form::submit('Buscar', array('class' => 'btn btn-success')) !!}
+                            </div>
+                            {!! Form::close() !!}
+
+                        </div>
+
+                    </div><!-- .row -->
+
+                </div> <!-- .panel-body -->
                 <div class="panel-footer">Panel footer</div>
             </div>
         </div>
     </div>
-
-
-
-    <hr/>
-	<div class="row">
-		<div class="col-xs-12">
-            @if($resultados == null)
-            <h3>No hay resultados</h3>
-            @endif
-            @if($resultados)
-            <h3>Resultados:</h3>
-            <table class="table table-striped">
-                <tr>
-                <td><strong>OS:</strong></td>
-                <td><strong>Área:</strong></td>
-                <td><strong>Nombre:</strong></td>
-                <td><strong>Teléfono:</strong></td>
-                <td><strong>Domicilio:</strong></td>
-                <td><strong>Estado:</strong></td>
-                <td><strong>Creado:</strong></td>
-                <td><strong>Tecnico:</strong></td>
-                <td><strong>Ver</strong></td>
-                </tr>
-                @foreach ($resultados as $resultado)
-                <tr>
-                    <td>{{ $resultado->os }}</td>
-                    <td>{{ $resultado->area->name }}</td>
-                    <td>{{ $resultado->name }}</td>
-                    <td>{{ $resultado->telefono }}</td>
-                    <td>{{ $resultado->domicilio }}</td>
-                    <td>{{ $resultado->status->slug }}</td>
-                    <td>{{ $resultado->created_at }}</td>
-                    <td>{{ $resultado->user->username }}</td>
-                    <td><a class="btn btn-success" href="{{ url('installs/'.$resultado->id) }}">Ver</a></td>
-                </tr>
-                @endforeach
-
-            </table>
-            @endif
-
-		</div>
-	</div>
-
 </div>
 @endsection

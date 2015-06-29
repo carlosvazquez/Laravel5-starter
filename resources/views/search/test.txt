@@ -1,0 +1,52 @@
+name="empleado" id="todos" value="0" checked>
+name="empleado" id="unico" value="1" >
+{!! Form::select('id_empleado', $tecnicos, null, ['class'=>'form-control']) !!}
+{!! Form::label('status', 'Generar por estatus:') !!}
+<input type="radio" name="status" id="status" value="0" checked>
+<input type="radio" name="status" id="status" value="1" >
+{!! Form::select('id_status', $status, null, ['class'=>'form-control']) !!}
+{!! Form::label('area', 'Generar por área:') !!}
+<input type="radio" name="area" id="area" value="0" checked>
+<input type="radio" name="area" id="area" value="1" >
+{!! Form::select('id_area', $area, null, ['class'=>'form-control']) !!}
+{!! Form::label('ini_fecha', 'Fecha inicial:') !!}
+{!! Form::date('ini_dia', \Carbon\Carbon::now(), array('class' => 'form-control', 'id'=>'formGroupInputLarge')); !!}
+{!! Form::label('fin_fecha', 'Fecha final') !!}
+{!! Form::date('fin_dia', \Carbon\Carbon::now(), array('class' => 'form-control', 'id'=>'formGroupInputLarge')); !!}
+
+
+
+        if($empleado != 0 ) {
+            $empleado = $id_empleado;
+            $c_empleado = '=';
+        }
+
+        // Si el estatus es diferente de 0, se queda
+        if($status != 0 ) {
+            $status = $id_status;
+            $c_status = '=';
+        }
+
+        if($area != 0 ) {
+            $area = $id_area;
+            $c_area = '=';
+        }
+
+        if($area != 0 ) {
+            $area = $id_area;
+            $c_area = '=';
+        }
+
+
+
+                $resultados = Install::with('user')
+                    ->with('area')
+                    ->with('division')
+                    ->with('status')
+                    ->with('responsable')
+                    ->with('reporte')
+                    ->with('cancelacion')
+                    ->where('user_id', '=', Auth::user()->id)
+                    ->where('status_id', '=', $status)
+                    ->where('created_at', 'LIKE', '%'.$ini_dia.'%')
+                    ->orderBy('area_id', 'ASC')->get();

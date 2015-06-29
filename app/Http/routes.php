@@ -20,15 +20,17 @@ Route::group(['middleware' => ['auth']], function()
 
     Route::resource('reports', 'ReportsController');
     Route::resource('cancels', 'CancelsController');
-
+    Route::get('search', 'SearchController@index');
+    Route::post('search', 'SearchController@index');
+    Route::get('search/results', 'SearchController@results');
+    Route::post('search/results', 'SearchController@results');
 });
 
 Route::group(['middleware' => ['auth', 'admin']], function()
 {
     Route::resource('users', 'UsersController');
     Route::get('listados', 'ListadosController@index');
-    Route::get('search', 'SearchController@index');
-    Route::post('search', 'SearchController@index');
+
 
     Route::get('excel', 'ExcelController@index');
     Route::post('excel/generar', 'ExcelController@generator');

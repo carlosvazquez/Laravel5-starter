@@ -34,7 +34,6 @@ class ExcelController extends Controller {
     public function index()
     {
 
-
         //EXCEL REPORTES
         //POR AREA, ESTATUS Y RANGO DE DIAS Y POR EMPLEADO
         $resultados ='';
@@ -42,10 +41,6 @@ class ExcelController extends Controller {
         $tecnicos = User::where('type', '=', 'tecnico')->lists('username', 'id');
         $area = DB::table('areas')->lists('name', 'id');
         $status = DB::table('statuses')->lists('slug', 'id');
-
-
-
-
 
         $data = Request::all();
 
