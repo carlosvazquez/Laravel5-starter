@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Acciones</div>
                     <div class="panel-body text-center">
-                        <a class="btn btn-success btn-lg" href="{{ url('/installs/create') }}">Nueva Orden de Servicio</a><br>
+                        <a class="btn btn-success btn-lg" href="{{ url('/installs/create') }}">Nueva Orden de Servicio</a>
                         <a class="btn btn-success btn-lg" href="{{ url('/search') }}">Buscar</a><br>
                     </div>
                 </div>

@@ -24,11 +24,6 @@ class SearchController extends Controller {
     {
         $this->middleware('auth');
     }
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 
 	public function index()
     {
@@ -44,46 +39,60 @@ class SearchController extends Controller {
     public function results()
     {
         $usuario = false;
+        $id_status = false;
         if(Auth::user()->is('admin') or Auth::user()->is('contralor')) {
             $usuario = true;
         }
-        $c_empleado = '!=';
-        $c_status = '!=';
-        $c_area = '!=';
         $data = Request::all();
+        $ini_dia = isset($data['ini_dia']) ? $data['ini_dia'] : false;
+
+        if($ini_dia == false) {
+            flash()->error('Vuelva a intentar la búsqueda');
+            return redirect('search');
+        }
+        $ini_dia = $data['ini_dia'];
+        $fin_dia = $data['fin_dia'];
+        $fin_dia = Carbon::parse($fin_dia)->addDay();
         if(empty($data['empleado'])){
             $empleado = false;
-            $query_empleado = "->where('user_id','=',',*)";
         } else {
             $empleado = $data['empleado'];
-            $query_empleado = "->where('user_id',.$c_empleado.','.$id_empleado.')'";
         }
-        if(empty($data['status'])){ $status = false; } else { $status = $data['status'];}
-        if(empty($data['id_status'])){ $id_status = false;} else {$id_status = $data['id_status'];}
-        if(empty($data['area'])){ $area = false; } else { $area = $data['area'];}
-        if(empty($data['ini_dia'])){ $ini_dia = false; } else { $ini_dia = $data['ini_dia']; }
-        if(empty($data['fin_dia'])){ $fin_dia = false; } else { $fin_dia = $data['fin_dia']; }
-        if(empty($data['id_empleado'])){ $id_empleado = false; } else { $id_empleado = $data['id_empleado']; }
-        if(empty($data['id_area'])){ $id_area = false; } else { $id_area = $data['id_area']; }
-        $fin_dia = Carbon::parse($fin_dia)->addDay();
 
-
-        if($usuario) {
-            // Buscamos con admin o contralor
-                $resultados = Install::with('user')
-                    ->with('area')
-                    ->with('division')
-                    ->with('status')
-                    ->with('responsable')
-                    ->with('reporte')
-                    ->with('cancelacion')
-                    ->where('status_id', $c_status, $status)
-                    ->where('user_id', '=', $id_empleado)
-                    ->where('created_at', 'LIKE', '%'.$ini_dia.'%')
-                    ->orderBy('area_id', 'ASC')->get();
-
-
+        if($empleado) {
+            $id_empleado = $data['id_empleado'];
+            $c_empleado = '=';
         } else {
+            $id_empleado = 0;
+            $c_empleado = '!=';
+        }
+
+        $status = $data['status'];
+        if($status) {
+            $id_status = $data['id_status'];
+            $c_status = '=';
+        } else {
+            $id_status = 0;
+            $c_status = '!=';
+        }
+
+        if(empty($area['area'])){
+            $area = false;
+        } else {
+            $area = $data['area'];
+        }
+
+        if($area) {
+            $id_area = $data['id_area'];
+            $c_area = '=';
+        } else {
+            $id_area = 0;
+            $c_area = '!=';
+        }
+
+        //Si eres admin o contralor
+        if($usuario) {
+                $id_empleado = $data['id_empleado'];
                 $resultados = Install::with('user')
                     ->with('area')
                     ->with('division')
@@ -91,11 +100,25 @@ class SearchController extends Controller {
                     ->with('responsable')
                     ->with('reporte')
                     ->with('cancelacion')
-                    ->where('user_id', '=', Auth::user()->id)
-                    ->where('status_id', '=', $status)
-                    ->where('created_at', 'LIKE', '%'.$ini_dia.'%')
-                    ->orderBy('area_id', 'ASC')->get();
-            }
+                    ->where('area_id', $c_area, $id_area)
+                    ->where('user_id', $c_empleado, $id_empleado)
+                    ->where('status_id', $c_status, $id_status)
+                    ->where('created_at', '>', $ini_dia)
+                    ->where('created_at', '<', $fin_dia)->get();
+            } else {
+            $id_empleado = Auth::user()->id;
+            $resultados = Install::with('user')
+                ->with('area')
+                ->with('division')
+                ->with('status')
+                ->with('responsable')
+                ->with('reporte')
+                ->with('cancelacion')
+                ->where('user_id', '=', $id_empleado)
+                ->where('status_id', $c_status, $id_status)
+                ->where('created_at', '>', $ini_dia)
+                ->where('created_at', '<', $fin_dia)->get();
+        }
 
 
         $title 	= 'Eistel | Resultados de la búsqueda';

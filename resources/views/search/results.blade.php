@@ -8,9 +8,8 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Resultados</h3>
                     </div>
-                    <div class="panel-body">
-                        btn regresar
-
+                    <div class="panel-body text-center">
+                        <a class="btn btn-success btn-lg" href="{{ url('/search') }}">Regresar</a><br>
                     </div> <!-- .panel-body -->
                     <div class="panel-footer">Panel footer</div>
                 </div>
@@ -19,9 +18,10 @@
         <hr/>
         <div class="row">
             <div class="col-xs-12">
-                @if($resultados == null)
+                @if($resultados->count() == 0)
                     <h3>No hay resultados</h3>
                 @endif
+                @if($resultados->count() > 0)
                     <h3>Resultados:</h3>
                     <table class="table table-striped">
                         <tr>
@@ -34,7 +34,7 @@
                             <td><strong>Creado:</strong></td>
                             <td><strong>Tecnico:</strong></td>
                             <td><strong>Ver</strong></td>
-                        </tr>aaa
+                        </tr>
                         @foreach ($resultados as $resultado)
                             <tr>
                                 <td>{{ $resultado->os }}</td>
@@ -49,7 +49,7 @@
                             </tr>
                         @endforeach
                     </table>
-
+                    @endif
             </div>
         </div>
 
