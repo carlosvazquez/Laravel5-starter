@@ -76,7 +76,7 @@ class SearchController extends Controller {
             $c_status = '!=';
         }
 
-        if(empty($area['area'])){
+        if(empty($data['area'])){
             $area = false;
         } else {
             $area = $data['area'];
